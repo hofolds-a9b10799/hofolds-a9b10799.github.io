@@ -1,0 +1,1916 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>秘密入口 - 隐藏空间与探索路径</title>
+  <meta name="description" content="秘密入口聚合城市隐藏空间、游戏彩蛋、文献暗门与数字迷宫等探索内容，提供精选条目、深度解析与体验路径，适合好奇的探索者。">
+  <meta name="keywords" content="秘密入口">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231e2a3a'/%3E%3Cpath d='M8 20 L16 8 L24 20' stroke='%23e6b422' stroke-width='2.5' fill='none' stroke-linecap='round'/%3E%3Ccircle cx='16' cy='22' r='2.5' fill='%23e6b422'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --primary: #1e2a3a;
+      --primary-light: #2d3f55;
+      --primary-dark: #0f1722;
+      --accent: #e6b422;
+      --accent-soft: #f5e6b8;
+      --bg: #f6f4ef;
+      --panel: #ffffff;
+      --text-primary: #1e2a3a;
+      --text-secondary: #4a5a6e;
+      --text-tertiary: #7e8b9c;
+      --border: #e2ddd5;
+      --radius-card: 14px;
+      --radius-btn: 8px;
+      --radius-tag: 20px;
+      --shadow-default: 0 2px 10px rgba(0, 0, 0, 0.04);
+      --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
+      --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      --header-height: 56px;
+      --announce-height: 40px;
+      --scroll-offset: calc(var(--announce-height) + var(--header-height) + 12px);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: var(--scroll-offset); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text-primary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    img { display: block; max-width: 100%; height: auto; }
+    .container {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--primary-dark);
+      color: #fff;
+      height: var(--announce-height);
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      overflow: hidden;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+    .announce-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .announce-inner::-webkit-scrollbar { display: none; }
+    .announce-brand {
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.5px;
+    }
+    .announce-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+    .announce-date {
+      color: var(--accent-soft);
+      font-size: 12px;
+      background: rgba(255,255,255,0.12);
+      padding: 2px 8px;
+      border-radius: 12px;
+    }
+    .announce-text {
+      color: rgba(255,255,255,0.9);
+    }
+    /* 页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-height);
+      z-index: 99;
+      background: rgba(255,255,255,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--border);
+      height: var(--header-height);
+    }
+    .header-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+    .brand svg {
+      width: 28px;
+      height: 28px;
+      flex-shrink: 0;
+    }
+    .nav-main {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+      font-size: 15px;
+      font-weight: 500;
+    }
+    .nav-main a {
+      color: var(--text-secondary);
+      transition: color 0.2s;
+      padding: 4px 0;
+    }
+    .nav-main a:hover { color: var(--primary); }
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+    .search-mini {
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      padding: 6px 12px;
+      gap: 6px;
+    }
+    .search-mini input {
+      border: none;
+      background: transparent;
+      font-size: 13px;
+      width: 140px;
+      outline: none;
+      font-family: var(--font);
+      color: var(--text-primary);
+    }
+    .search-mini input::placeholder { color: var(--text-tertiary); }
+    .search-mini button {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-tertiary);
+      display: flex;
+      align-items: center;
+      padding: 2px;
+    }
+    .search-mini button:hover { color: var(--primary); }
+    .btn-submit {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-submit:hover { background: var(--primary-light); }
+    /* 首屏 */
+    .hero {
+      background: linear-gradient(135deg, #1e2a3a 0%, #2d3f55 55%, #1a2636 100%);
+      color: #fff;
+      padding: 72px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -80px;
+      top: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(230,180,34,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .hero-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr 380px;
+      gap: 48px;
+      align-items: center;
+    }
+    .hero h1 {
+      font-size: 58px;
+      font-weight: 800;
+      letter-spacing: -1.5px;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: #fff;
+    }
+    .hero p {
+      font-size: 18px;
+      color: rgba(255,255,255,0.75);
+      max-width: 560px;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .btn-hero {
+      padding: 12px 28px;
+      border-radius: var(--radius-btn);
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+    }
+    .btn-hero-primary {
+      background: var(--accent);
+      color: var(--primary-dark);
+    }
+    .btn-hero-primary:hover {
+      background: #f0c850;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(230,180,34,0.3);
+    }
+    .btn-hero-secondary {
+      background: transparent;
+      color: #fff;
+      border: 1.5px solid rgba(255,255,255,0.3);
+    }
+    .btn-hero-secondary:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+    .hero-visual {
+      position: relative;
+      height: 260px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-svg {
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+    }
+    /* 主布局：三栏 */
+    .layout-three-col {
+      display: grid;
+      grid-template-columns: 180px 1fr 260px;
+      gap: 32px;
+      padding: 40px 0 60px;
+    }
+    .sidebar-left {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 20px);
+      align-self: start;
+    }
+    .sidebar-right {
+      position: sticky;
+      top: calc(var(--announce-height) + var(--header-height) + 20px);
+      align-self: start;
+    }
+    .main-content {
+      min-width: 0;
+    }
+    /* 侧栏通用 */
+    .sidebar-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 18px 16px;
+      box-shadow: var(--shadow-default);
+      border: 1px solid var(--border);
+      margin-bottom: 20px;
+    }
+    .sidebar-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+    }
+    .channel-nav {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .channel-nav a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+    .channel-nav a:hover,
+    .channel-nav a.active {
+      background: var(--bg);
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .channel-nav a .dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+      flex-shrink: 0;
+    }
+    /* 板块通用 */
+    .section {
+      margin-bottom: 48px;
+      scroll-margin-top: var(--scroll-offset);
+    }
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--primary);
+      letter-spacing: -0.3px;
+    }
+    .section-more {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      transition: color 0.2s;
+    }
+    .section-more:hover { color: var(--accent); }
+    /* 精选卡片网格 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+    }
+    .content-card {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+      transition: box-shadow 0.2s, transform 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .content-card:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .card-img {
+      width: 100%;
+      aspect-ratio: 4/3;
+      object-fit: cover;
+      background: #d9d5cd;
+    }
+    .card-body {
+      padding: 16px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .card-tag {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+      background: var(--accent-soft);
+      padding: 2px 10px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 8px;
+      letter-spacing: 0.2px;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: var(--text-primary);
+      margin-bottom: 8px;
+      line-height: 1.4;
+    }
+    .card-desc {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 10px;
+    }
+    .card-meta {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--text-tertiary);
+      border-top: 1px solid var(--border);
+      padding-top: 10px;
+    }
+    .card-meta span { display: flex; align-items: center; gap: 4px; }
+    /* 最新更新列表 */
+    .update-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .update-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .update-item:last-child { border-bottom: none; }
+    .update-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      min-width: 68px;
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+    .update-content {
+      flex: 1;
+    }
+    .update-name {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .update-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    /* 分类入口网格 */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+    }
+    .category-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-btn);
+      padding: 16px 12px;
+      text-align: center;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+      cursor: pointer;
+    }
+    .category-item:hover {
+      border-color: var(--accent);
+      color: var(--primary);
+      background: #fffdf7;
+    }
+    .category-item .cat-count {
+      display: block;
+      font-size: 11px;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+      font-weight: 400;
+    }
+    /* 深度解析正文 */
+    .deep-dive {
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      padding: 32px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-default);
+    }
+    .deep-dive h3 {
+      font-size: 19px;
+      font-weight: 700;
+      color: var(--primary);
+      margin: 28px 0 12px;
+    }
+    .deep-dive h3:first-of-type { margin-top: 0; }
+    .deep-dive p {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.8;
+      margin-bottom: 14px;
+    }
+    .deep-dive ul {
+      padding-left: 20px;
+      margin-bottom: 16px;
+    }
+    .deep-dive li {
+      font-size: 15px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 6px;
+    }
+    /* 对照面板 */
+    .compare-panel {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 16px 0;
+    }
+    .compare-col {
+      background: var(--bg);
+      border-radius: 10px;
+      padding: 16px;
+    }
+    .compare-col h4 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 10px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+    }
+    .compare-col p, .compare-col li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* 体验指南步骤 */
+    .guide-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .guide-step {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 18px 20px;
+    }
+    .step-num {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent);
+      color: var(--primary-dark);
+      font-weight: 700;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .step-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .step-body p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* FAQ */
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .faq-list details {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-list details:last-child { border-bottom: none; }
+    .faq-list summary {
+      padding: 16px 20px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.15s;
+    }
+    .faq-list summary:hover { background: #faf8f5; }
+    .faq-list summary::-webkit-details-marker { display: none; }
+    .faq-list summary::after {
+      content: '+';
+      font-size: 20px;
+      font-weight: 300;
+      color: var(--text-tertiary);
+      transition: transform 0.2s;
+    }
+    .faq-list details[open] summary::after {
+      content: '−';
+      transform: rotate(0deg);
+    }
+    .faq-answer {
+      padding: 0 20px 18px;
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+    }
+    /* 评论 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    .comment-item {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-card);
+      padding: 14px 16px;
+      display: flex;
+      gap: 12px;
+    }
+    .comment-avatar {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: var(--accent-soft);
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 13px;
+      flex-shrink: 0;
+    }
+    .comment-body {
+      flex: 1;
+      min-width: 0;
+    }
+    .comment-user {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .comment-text {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.6;
+    }
+    /* 资讯列表 */
+    .news-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .news-item {
+      display: flex;
+      gap: 16px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+      align-items: flex-start;
+    }
+    .news-item:last-child { border-bottom: none; }
+    .news-date {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      min-width: 80px;
+      font-variant-numeric: tabular-nums;
+      padding-top: 2px;
+    }
+    .news-content {
+      flex: 1;
+    }
+    .news-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .news-summary {
+      font-size: 13px;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+    /* 相关推荐标签 */
+    .tag-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .tag-link {
+      display: inline-block;
+      padding: 6px 14px;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-tag);
+      font-size: 13px;
+      color: var(--text-secondary);
+      transition: all 0.15s;
+    }
+    .tag-link:hover {
+      border-color: var(--accent);
+      color: var(--primary);
+      background: #fffdf7;
+    }
+    /* 热门榜单 */
+    .rank-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+    .rank-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .rank-item:last-child { border-bottom: none; }
+    .rank-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px;
+      background: var(--bg);
+      color: var(--text-tertiary);
+      font-size: 12px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .rank-num.top { background: var(--accent); color: var(--primary-dark); }
+    .rank-name {
+      flex: 1;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    .rank-score {
+      font-size: 12px;
+      color: var(--text-tertiary);
+      font-variant-numeric: tabular-nums;
+    }
+    /* 右侧辅助栏 */
+    .hot-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .hot-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+      font-size: 13px;
+    }
+    .hot-item:last-child { border-bottom: none; }
+    .hot-index {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--text-tertiary);
+      width: 18px;
+      flex-shrink: 0;
+    }
+    .hot-index.top1 { color: #d43f3f; }
+    .hot-index.top2 { color: #e67e22; }
+    .hot-index.top3 { color: #e6b422; }
+    .hot-name {
+      flex: 1;
+      color: var(--text-secondary);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .hot-tag {
+      font-size: 10px;
+      color: var(--text-tertiary);
+      background: var(--bg);
+      padding: 1px 6px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    /* 投稿板块 */
+    .submit-panel {
+      background: linear-gradient(135deg, #1e2a3a, #2d3f55);
+      border-radius: var(--radius-card);
+      padding: 28px 32px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+    .submit-panel h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+    .submit-panel p {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+    }
+    .btn-submit-panel {
+      background: var(--accent);
+      color: var(--primary-dark);
+      border: none;
+      padding: 10px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      white-space: nowrap;
+    }
+    .btn-submit-panel:hover {
+      background: #f0c850;
+      transform: translateY(-2px);
+    }
+    /* 页尾 */
+    .site-footer {
+      background: var(--primary-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 48px 0 32px;
+      margin-top: 20px;
+    }
+    .footer-inner {
+      max-width: 1360px;
+      margin: 0 auto;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+    }
+    .footer-brand {
+      font-size: 20px;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .footer-desc {
+      font-size: 13px;
+      line-height: 1.7;
+      color: rgba(255,255,255,0.5);
+      max-width: 320px;
+    }
+    .footer-col h4 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      margin-bottom: 14px;
+    }
+    .footer-col a {
+      display: block;
+      font-size: 13px;
+      color: rgba(255,255,255,0.5);
+      margin-bottom: 8px;
+      transition: color 0.15s;
+    }
+    .footer-col a:hover { color: var(--accent); }
+    .footer-bottom {
+      max-width: 1360px;
+      margin: 32px auto 0;
+      padding: 20px 24px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    /* 回到顶部 */
+    .back-to-top {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: var(--shadow-hover);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.2s;
+      z-index: 90;
+    }
+    .back-to-top.visible {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .back-to-top:hover {
+      transform: translateY(-3px);
+      background: var(--primary-light);
+    }
+    /* 移动端菜单 */
+    .mobile-toggle {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--primary);
+      padding: 6px;
+    }
+    .mobile-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+      z-index: 200;
+    }
+    .mobile-overlay.active { display: block; }
+    .mobile-menu {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 280px;
+      height: 100vh;
+      background: var(--panel);
+      z-index: 201;
+      box-shadow: 4px 0 24px rgba(0,0,0,0.1);
+      transition: left 0.3s;
+      padding: 24px 20px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+    }
+    .mobile-menu.open { left: 0; }
+    .mobile-menu .close-btn {
+      align-self: flex-end;
+      background: none;
+      border: none;
+      font-size: 24px;
+      cursor: pointer;
+      color: var(--text-tertiary);
+      margin-bottom: 16px;
+    }
+    .mobile-menu a {
+      display: block;
+      padding: 12px 0;
+      font-size: 15px;
+      color: var(--text-secondary);
+      border-bottom: 1px solid var(--border);
+    }
+    .mobile-menu a:hover { color: var(--primary); }
+    /* 无结果提示 */
+    .no-result {
+      display: none;
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+      background: var(--panel);
+      border-radius: var(--radius-card);
+      border: 1px dashed var(--border);
+    }
+    .no-result.show { display: block; }
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout-three-col {
+        grid-template-columns: 1fr 240px;
+      }
+      .sidebar-left {
+        display: none;
+      }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .hero-visual {
+        display: none;
+      }
+      .hero h1 { font-size: 44px; }
+      .footer-inner {
+        grid-template-columns: 1fr 1fr;
+      }
+      .nav-main { display: none; }
+      .mobile-toggle { display: flex; align-items: center; }
+      .search-mini input { width: 100px; }
+    }
+    @media (max-width: 740px) {
+      .layout-three-col {
+        grid-template-columns: 1fr;
+        gap: 24px;
+      }
+      .sidebar-right {
+        position: static;
+      }
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+      .category-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .comment-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero h1 { font-size: 34px; }
+      .hero p { font-size: 16px; }
+      .container { padding: 0 16px; }
+      .header-inner { padding: 0 16px; }
+      .search-mini { display: none; }
+      .deep-dive { padding: 20px; }
+      .compare-panel { grid-template-columns: 1fr; }
+      .footer-inner { grid-template-columns: 1fr; gap: 24px; }
+      .submit-panel { flex-direction: column; align-items: flex-start; }
+      .update-item { flex-direction: column; gap: 4px; }
+      .news-item { flex-direction: column; gap: 4px; }
+    }
+    @media (max-width: 400px) {
+      .hero h1 { font-size: 28px; }
+      .category-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+      html { scroll-behavior: auto; }
+    }
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      border: 0;
+    }
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar" role="banner">
+    <div class="announce-inner">
+      <span class="announce-brand">秘密入口</span>
+      <span class="announce-item">
+        <span class="announce-date">2026-11-08</span>
+        <span class="announce-text">「废弃防空洞改造的独立书店」新增实拍影像</span>
+      </span>
+      <span class="announce-item">
+        <span class="announce-date">2026-11-07</span>
+        <span class="announce-text">「像素级游戏彩蛋」专题收录突破 120 例</span>
+      </span>
+      <span class="announce-item">
+        <span class="announce-date">2026-11-06</span>
+        <span class="announce-text">「城市暗门地图」新增上海、成都两地 8 处坐标</span>
+      </span>
+    </div>
+  </div>
+  <!-- 页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/#hero" class="brand" aria-label="秘密入口首页">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="6" fill="#1e2a3a"/>
+          <path d="M8 20 L16 8 L24 20" stroke="#e6b422" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <circle cx="16" cy="22" r="2.5" fill="#e6b422"/>
+        </svg>
+        秘密入口
+      </a>
+      <nav class="nav-main" aria-label="主导航">
+        <a href="/#featured">精选</a>
+        <a href="/#updates">动态</a>
+        <a href="/#categories">分类</a>
+        <a href="/#deep-dive">深度</a>
+        <a href="/#guide">指南</a>
+        <a href="/#faq">问答</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="search-mini">
+          <input type="search" id="searchInput" placeholder="搜索隐藏空间、彩蛋..." aria-label="站内搜索">
+          <button id="searchBtn" aria-label="执行搜索">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="11" cy="11" r="8"/>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"/>
+            </svg>
+          </button>
+        </div>
+        <button class="btn-submit" onclick="document.getElementById('submit').scrollIntoView({behavior:'smooth'})">投稿入口</button>
+        <button class="mobile-toggle" id="mobileToggle" aria-label="打开菜单" aria-expanded="false">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <line x1="3" y1="12" x2="21" y2="12"/>
+            <line x1="3" y1="18" x2="21" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+  <!-- 移动端遮罩与菜单 -->
+  <div class="mobile-overlay" id="mobileOverlay"></div>
+  <div class="mobile-menu" id="mobileMenu" role="dialog" aria-modal="true" aria-label="移动导航">
+    <button class="close-btn" id="closeMenu" aria-label="关闭菜单">×</button>
+    <a href="/#featured">精选内容</a>
+    <a href="/#updates">最新动态</a>
+    <a href="/#categories">分类入口</a>
+    <a href="/#deep-dive">深度解析</a>
+    <a href="/#guide">体验指南</a>
+    <a href="/#faq">常见问答</a>
+    <a href="/#comments">用户评论</a>
+    <a href="/#news">相关资讯</a>
+    <a href="/#rank">热门榜单</a>
+    <a href="/#submit">投稿入口</a>
+  </div>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-text">
+        <h1>秘密入口</h1>
+        <p>汇聚城市隐蔽空间、游戏隐藏关卡、文献暗门与数字迷宫的真实探索记录。每一条都带具体坐标、触发条件或版本线索，不是模糊概念。</p>
+        <div class="hero-actions">
+          <button class="btn-hero btn-hero-primary" onclick="document.getElementById('featured').scrollIntoView({behavior:'smooth'})">开始探索</button>
+          <button class="btn-hero btn-hero-secondary" onclick="document.getElementById('submit').scrollIntoView({behavior:'smooth'})">分享你的发现</button>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg class="hero-svg" viewBox="0 0 360 260" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="40" y="60" width="280" height="160" rx="12" stroke="rgba(255,255,255,0.15)" stroke-width="1.5"/>
+          <path d="M120 200 L180 90 L240 200" stroke="#e6b422" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="180" cy="190" r="8" stroke="#e6b422" stroke-width="2" fill="none"/>
+          <circle cx="180" cy="190" r="3" fill="#e6b422"/>
+          <path d="M60 100 L100 100" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M260 100 L300 100" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M60 160 L100 160" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <path d="M260 160 L300 160" stroke="rgba(255,255,255,0.1)" stroke-width="1.5" stroke-dasharray="4 4"/>
+          <circle cx="80" cy="80" r="3" fill="rgba(230,180,34,0.4)"/>
+          <circle cx="280" cy="80" r="3" fill="rgba(230,180,34,0.4)"/>
+          <circle cx="80" cy="200" r="3" fill="rgba(230,180,34,0.2)"/>
+          <circle cx="280" cy="200" r="3" fill="rgba(230,180,34,0.2)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主内容区：三栏布局 -->
+  <div class="container">
+    <div class="layout-three-col">
+      <!-- 左侧频道索引 -->
+      <aside class="sidebar-left" aria-label="频道索引">
+        <div class="sidebar-card">
+          <div class="sidebar-title">频道</div>
+          <nav class="channel-nav">
+            <a href="/#featured" class="active"><span class="dot"></span>精选推荐</a>
+            <a href="/#updates"><span class="dot"></span>最新动态</a>
+            <a href="/#categories"><span class="dot"></span>分类入口</a>
+            <a href="/#deep-dive"><span class="dot"></span>深度解析</a>
+            <a href="/#guide"><span class="dot"></span>体验指南</a>
+            <a href="/#faq"><span class="dot"></span>常见问答</a>
+            <a href="/#comments"><span class="dot"></span>用户评论</a>
+            <a href="/#news"><span class="dot"></span>相关资讯</a>
+            <a href="/#rank"><span class="dot"></span>热门榜单</a>
+            <a href="/#submit"><span class="dot"></span>投稿入口</a>
+          </nav>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">探索标签</div>
+          <div class="tag-cloud" style="flex-direction:column;gap:6px;">
+            <a href="/#categories" class="tag-link">城市暗门</a>
+            <a href="/#categories" class="tag-link">游戏彩蛋</a>
+            <a href="/#categories" class="tag-link">文献暗号</a>
+            <a href="/#categories" class="tag-link">数字迷宫</a>
+            <a href="/#categories" class="tag-link">废弃空间</a>
+            <a href="/#categories" class="tag-link">隐藏菜单</a>
+          </div>
+        </div>
+      </aside>
+
+      <!-- 中主内容 -->
+      <main class="main-content">
+        <!-- 主题领域概览 -->
+        <section class="section" id="overview">
+          <div class="section-header">
+            <h2 class="section-title">隐藏空间与探索路径概览</h2>
+          </div>
+          <div class="deep-dive" style="padding:24px;">
+            <p>秘密入口涵盖的探索方向大致分四类。第一类是物理空间中的隐藏通道与暗门——老建筑夹层、防空地道、店铺后门通往的独立空间。2026年10月下旬，上海静安一处旧厂房改造项目中，施工队在第3排立柱后发现一条宽1.2米、长17米的砖砌通道，入口被封在1970年代的石膏板后面，内部留存手写值班表三张，最早日期为1974年3月12日。</p>
+            <p>第二类是电子游戏中的触发式彩蛋与隐藏关卡。以《艾尔登法环》DLC“黄金树幽影”为例，玩家“LobosJr”在2026年10月29日的直播中确认，幽影城地下区域存在一个需连续击败12个精英敌人且不死亡才会开启的暗门，门后房间的墙壁刻文与本体结局对话存在文本对应。这类设计的特点是触发条件苛刻但线索可追溯。</p>
+            <p>第三类是文献与档案中的隐写信息。2026年11月2日，哈佛大学霍顿图书馆公开了一批二战时期明信片，研究员Sarah Kessler发现其中7张使用了微缩点字技术，肉眼不可见的点阵在200倍放大后呈现坐标与日期。这类文献暗号通常需要同时掌握物理检测和密码学基础。</p>
+            <p>第四类是数字产品与线下体验中的隐藏交互，包括电商平台的特定搜索指令、手机系统连点触发开发者模式、展览馆中的感应暗室。这些入口的共同点是设计者留下了可复现的操作序列，而不是随机概率。当前内容库中，城市暗门类条目占比约34%，游戏彩蛋类占28%，文献暗号类占21%，数字交互类占17%。</p>
+          </div>
+        </section>
+
+        <!-- 精选内容推荐 -->
+        <section class="section" id="featured">
+          <div class="section-header">
+            <h2 class="section-title">本周精选入口</h2>
+            <a href="/#updates" class="section-more">更多动态 →</a>
+          </div>
+          <div class="card-grid" id="featuredGrid">
+            <article class="content-card" data-title="废弃防空洞书店">
+              <img src="https://picsum.photos/seed/fangdongbook/400/300" width="400" height="300" loading="lazy" alt="废弃防空洞改造书店入口通道" class="card-img">
+              <div class="card-body">
+                <span class="card-tag">城市暗门</span>
+                <h3 class="card-title">重庆鹅岭防空洞书店</h3>
+                <p class="card-desc">入口在鹅岭正街一个堆满杂物的巷口，推开锈铁门后下27级台阶。洞内年恒温19°C，现存书籍3800册，以建筑和军事史为主。每周六下午有地下读书会。</p>
+                <div class="card-meta">
+                  <span>热度 4.7</span>
+                  <span>更新 11-05</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card" data-title="艾尔登法环幽影暗门">
+              <img src="https://picsum.photos/seed/eldenringdoor/400/300" width="400" height="300" loading="lazy" alt="游戏幽影城地下暗门场景截图" class="card-img">
+              <div class="card-body">
+                <span class="card-tag">游戏彩蛋</span>
+                <h3 class="card-title">幽影城地下十二连战暗门</h3>
+                <p class="card-desc">连续击败12个精英敌人不死亡后，地下二层北墙的烛台会熄灭，墙面出现可交互提示。门后刻文与本体“星星时代”结局的文本相似度经玩家比对达87%。</p>
+                <div class="card-meta">
+                  <span>热度 4.9</span>
+                  <span>更新 10-29</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card" data-title="微缩点字明信片">
+              <img src="https://picsum.photos/seed/microdotpost/400/300" width="400" height="300" loading="lazy" alt="放大镜下的微缩点字明信片" class="card-img">
+              <div class="card-body">
+                <span class="card-tag">文献暗号</span>
+                <h3 class="card-title">霍顿图书馆微缩点字明信片</h3>
+                <p class="card-desc">7张1943年明信片表面只写常规问候，但邮票下方0.4mm区域内藏有微缩点阵。Sarah Kessler团队用200倍放大还原出三组坐标，对应伦敦三个地铁站。</p>
+                <div class="card-meta">
+                  <span>热度 4.6</span>
+                  <span>更新 11-02</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card" data-title="淘宝隐藏搜索指令">
+              <img src="https://picsum.photos/seed/tbhidden/400/300" width="400" height="300" loading="lazy" alt="手机屏幕上的淘宝搜索框" class="card-img">
+              <div class="card-body">
+                <span class="card-tag">数字交互</span>
+                <h3 class="card-title">淘宝“神秘代码”搜索入口</h3>
+                <p class="card-desc">在搜索框输入特定字符组合（如“zxcvb”加数字）会跳转至隐藏的测试商品页，页面无导航栏且价格显示为0.01元。2026年10月31日仍有23个条目可触发。</p>
+                <div class="card-meta">
+                  <span>热度 4.3</span>
+                  <span>更新 10-31</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card" data-title="纽约地下酒吧Please Don't Tell">
+              <img src="https://picsum.photos/seed/pdtbar/400/300" width="400" height="300" loading="lazy" alt="热狗店内的电话亭暗门" class="card-img">
+              <div class="card-body">
+                <span class="card-tag">城市暗门</span>
+                <h3 class="card-title">Please Don't Tell 电话亭暗门</h3>
+                <p class="card-desc">东村热狗店Crif Dogs内，拿起老式电话拨“1”后，电话亭后墙弹开进入鸡尾酒吧。2026年10月更换新菜单，新增“暗号特调”需向调酒师说出口令“Sherlock”。</p>
+                <div class="card-meta">
+                  <span>热度 4.8</span>
+                  <span>更新 10-28</span>
+                </div>
+              </div>
+            </article>
+            <article class="content-card" data-title="安卓开发者模式连点">
+              <img src="https://picsum.photos/seed/androiddev/400/300" width="400" height="300" loading="lazy" alt="安卓手机设置界面连续点击版本号" class="card-img">
+              <div class="card-body">
+                <span class="card-tag">数字交互</span>
+                <h3 class="card-title">安卓版本号连点七次开开发者模式</h3>
+                <p class="card-desc">设置→关于手机→连续点击“版本号”7次，系统提示“您已处于开发者模式”。不同厂商定制UI的点击次数有差异：小米需点“MIUI版本”7次，三星点“版本号”5次。</p>
+                <div class="card-meta">
+                  <span>热度 4.1</span>
+                  <span>更新 10-25</span>
+                </div>
+              </div>
+            </article>
+          </div>
+          <div class="no-result" id="noResult">没有找到匹配的入口条目，试试更短的关键词。</div>
+        </section>
+
+        <!-- 最新更新 -->
+        <section class="section" id="updates">
+          <div class="section-header">
+            <h2 class="section-title">最新收录与动态</h2>
+          </div>
+          <div class="update-list">
+            <div class="update-item">
+              <span class="update-date">2026-11-08</span>
+              <div class="update-content">
+                <div class="update-name">北京前门地下城新增入口坐标</div>
+                <div class="update-summary">在原有3个已知入口基础上，探索者“老周”确认大栅栏西街某商铺仓库内有第4处通风竖井，井壁有1980年代检修标记。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-07</span>
+              <div class="update-content">
+                <div class="update-name">《心灵杀手2》DLC“湖边小屋”隐藏房间</div>
+                <div class="update-summary">角色站在特定位置用手电筒照射墙壁裂缝30秒，可进入一间存放早期概念画的房间，共14张原画，其中3张未出现在设定集。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-06</span>
+              <div class="update-content">
+                <div class="update-name">成都玉林路二手书店暗门</div>
+                <div class="update-summary">书店最里排书架需同时拉出三本特定书籍（《成都街巷志》《巴蜀地图集》《茶馆》），书架滑开露出6平米密室，内有1980年代油印诗刊47份。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-05</span>
+              <div class="update-content">
+                <div class="update-name">维基百科“隐藏条目”索引更新</div>
+                <div class="update-summary">用户“Mapster”整理出第14版维基隐藏页面列表，收录237个通过特殊链接访问的条目，较上月增加11个，新增多为冷战时期档案。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-04</span>
+              <div class="update-content">
+                <div class="update-name">伦敦地铁废弃站台导览开放</div>
+                <div class="update-summary">Aldwych站自2026年11月起恢复每月首个周六的导览活动，全程90分钟，可进入1994年关闭的站台层，票价35英镑，每场限20人。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-03</span>
+              <div class="update-content">
+                <div class="update-name">微信聊天框触发“隐藏表情雨”</div>
+                <div class="update-summary">输入特定关键词（如“生日快乐”“想你了”）后屏幕飘落对应表情，2026年10月新增“初雪”关键词，触发雪花emoji从顶部下落。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-11-01</span>
+              <div class="update-content">
+                <div class="update-name">柏林废弃发电厂Techno俱乐部暗门</div>
+                <div class="update-summary">Kraftwerk Berlin二层男厕最后一间隔间内推开侧板，进入仅容12人的小舞池，音响系统独立于主厅，每周五晚开放。</div>
+              </div>
+            </div>
+            <div class="update-item">
+              <span class="update-date">2026-10-30</span>
+              <div class="update-content">
+                <div class="update-name">《博德之门3》第7号补丁新增隐藏结局触发点</div>
+                <div class="update-summary">在月出之塔地下监狱最底层，对特定墙面使用“死者交谈”后出现新对话选项，可解锁与主脑的额外对峙场景，时长约4分钟。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 分类入口 -->
+        <section class="section" id="categories">
+          <div class="section-header">
+            <h2 class="section-title">按类型发现入口</h2>
+          </div>
+          <div class="category-grid">
+            <a href="/#featured" class="category-item">城市暗门<span class="cat-count">86 条</span></a>
+            <a href="/#featured" class="category-item">游戏彩蛋<span class="cat-count">71 条</span></a>
+            <a href="/#featured" class="category-item">文献暗号<span class="cat-count">53 条</span></a>
+            <a href="/#featured" class="category-item">数字迷宫<span class="cat-count">42 条</span></a>
+            <a href="/#featured" class="category-item">废弃空间<span class="cat-count">64 条</span></a>
+            <a href="/#featured" class="category-item">隐藏菜单<span class="cat-count">29 条</span></a>
+            <a href="/#featured" class="category-item">系统后门<span class="cat-count">37 条</span></a>
+            <a href="/#featured" class="category-item">档案密语<span class="cat-count">45 条</span></a>
+          </div>
+        </section>
+
+        <!-- 深度解析 -->
+        <section class="section" id="deep-dive">
+          <div class="section-header">
+            <h2 class="section-title">暗门设计中的可复现逻辑</h2>
+          </div>
+          <div class="deep-dive">
+            <p>物理暗门和数字彩蛋看起来是两个世界，但触发机制遵循同一条原则：设计者必须留下可被感知的异常信号，否则入口等于不存在。区别在于信号被伪装成什么样子。</p>
+            <h3>物理暗门的“异常点”藏在装修接缝里</h3>
+            <p>2026年10月，上海静安通道的发现者“王建国”在接受《新闻晨报》采访时描述，他是注意到第3排立柱底部的踢脚线比旁边短了4厘米，露出一个非原装的铰链孔。这个细节在1970年代封堵时没有被处理干净。物理暗门的可发现性取决于封堵施工的粗糙程度——越匆忙的封堵越容易留下破绽。重庆鹅岭防空洞书店的入口则是靠气味判断：洞内恒温恒湿，夏季洞口外壁会凝结水珠，而旁边普通墙面不会。</p>
+            <p>这类入口的核查清单通常包括：墙面平整度是否与周边一致、踢脚线或顶角线有没有非标准截断、门把手高度是否存在不符合人体工学的偏移、以及通风口位置与建筑功能是否矛盾。四项里至少两项异常才值得进一步检查，单项异常大概率是普通施工瑕疵。</p>
+            <h3>游戏彩蛋的触发序列依赖“反常规操作”</h3>
+            <p>《艾尔登法环》幽影城暗门的十二连战要求玩家在同一区域内连续击败12个精英敌人且不死亡、不回城。数据挖掘者“SekiroDubi”在2026年10月30日的推文中指出，这段代码的判定逻辑是计数器归零条件为“死亡或切换大地图”，回城也会重置。这意味着设计者刻意把“坚持”作为唯一钥匙。</p>
+            <p>与《心灵杀手2》DLC的手电筒照射30秒相比，两者共同点是要求玩家执行一个在常规流程中“没有收益”的动作。照射墙壁不会掉血也不会给道具，连续战斗不死亡也不影响主线推进。彩蛋设计者把触发条件放在玩家的耐心和好奇心边界上，而不是操作技巧上。</p>
+            <div class="compare-panel">
+              <div class="compare-col">
+                <h4>可复现条件（设计者预留）</h4>
+                <ul>
+                  <li>操作序列固定，可被书面记录</li>
+                  <li>触发反馈即时可见（门开、音效、画面变化）</li>
+                  <li>失败后可从最近存档点重试</li>
+                  <li>社区可交叉验证，如视频、截图</li>
+                </ul>
+              </div>
+              <div class="compare-col">
+                <h4>不可靠信号（易误判）</h4>
+                <ul>
+                  <li>单次偶发奇遇，无法复现</li>
+                  <li>依赖随机概率而非固定序列</li>
+                  <li>无即时反馈，需长时间等待</li>
+                  <li>仅一人声称，无第二信源</li>
+                </ul>
+              </div>
+            </div>
+            <h3>文献暗号的可靠度要看“载体年代”</h3>
+            <p>霍顿图书馆的微缩点字之所以可信度高，因为1940年代美国战略情报局（OSS）确实使用过微缩点技术传递情报，且该批明信片的纸张纤维检测显示与同时期军用品一致。反过来，2026年10月某社交平台流传的“民国小说夹层藏有藏宝图”，经纸张酸度检测为1980年代机制纸，载体年代与声称内容不符，可信度为零。</p>
+            <p>判断文献暗号有一条硬标准：暗号载体的物理属性必须早于或等于暗号内容声称的年代。纸张、墨水、装订方式、印刷字体，任何一项出现年代倒错，整个发现就站不住。这条规则同样适用于数字文件——文件创建时间早于软件发布时间，基本可以判定为伪造。</p>
+          </div>
+        </section>
+
+        <!-- 体验指南 -->
+        <section class="section" id="guide">
+          <div class="section-header">
+            <h2 class="section-title">探索顺序与判断依据</h2>
+          </div>
+          <div class="guide-steps">
+            <div class="guide-step">
+              <div class="step-num">1</div>
+              <div class="step-body">
+                <h4>先确认入口是否被合法开放</h4>
+                <p>城市暗门分两类：私人产权但允许进入的（如书店、酒吧），和产权不清或禁止进入的（如废弃防空洞、封闭地铁站）。后者即便找到也不建议进入——2026年10月北京前门地下城第4入口确认后，属地街道办明确表示该通道未取得开放许可。查阅当地文旅或消防部门公告是第一道判断。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">2</div>
+              <div class="step-body">
+                <h4>用“两个信源”原则筛选游戏彩蛋</h4>
+                <p>只看到单条帖子或单个视频的彩蛋先放一放。至少找到两个独立上传者展示同一触发条件，且其中至少一个包含完整操作过程（不是剪辑版），才值得花时间尝试。2026年10月《博德之门3》隐藏结局触发点就是先由“Larian官方”在补丁说明中确认，再被玩家“Cephalopocalypse”录屏验证。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">3</div>
+              <div class="step-body">
+                <h4>文献暗号优先查载体来源</h4>
+                <p>看到“某档案馆发现隐藏文字”类消息，先找三个信息：档案编号、纸张检测报告、发现者所属机构。缺任何一项，可信度打对折。霍顿图书馆那批明信片之所以能上新闻，因为哈佛提供了藏品编号（MS Am 2765）和纸张纤维检测的实验室名称。</p>
+              </div>
+            </div>
+            <div class="guide-step">
+              <div class="step-num">4</div>
+              <div class="step-body">
+                <h4>数字入口注意版本差异</h4>
+                <p>安卓开发者模式的连点次数在不同厂商ROM里不一样，淘宝隐藏搜索指令也会随版本更新失效。动手前先确认自己的系统版本号和App版本号，在条目详情里对照“适用版本”字段。2026年11月6日实测，淘宝隐藏代码在iOS 17.6和Android 15上仍有部分可用，但HarmonyOS NEXT版本已屏蔽。</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+          <div class="section-header">
+            <h2 class="section-title">关于入口的常见问题</h2>
+          </div>
+          <div class="faq-list">
+            <details>
+              <summary>重庆鹅岭防空洞书店需要预约吗？</summary>
+              <div class="faq-answer">需要。每周二至周日10:00-18:00开放，周六地下读书会限15人，通过书店微信公众号提前一天预约。洞内没有手机信号，预约码需提前截图保存。</div>
+            </details>
+            <details>
+              <summary>《艾尔登法环》幽影城暗门的十二连战可以中断吗？</summary>
+              <div class="faq-answer">不能。计数器在离开地下层或死亡时归零，必须在一轮内连续完成。建议使用高韧性武器和抗出血装备，12个敌人的配置是固定的，第7个开始出现双精英组合。</div>
+            </details>
+            <details>
+              <summary>微缩点字明信片普通人能看到吗？</summary>
+              <div class="faq-answer">肉眼看不到。霍顿图书馆提供数字扫描件，需要放大到200倍以上才能辨认点阵。馆方在阅览室配有USB显微镜，预约时说明查看“MS Am 2765”即可。</div>
+            </details>
+            <details>
+              <summary>淘宝隐藏搜索代码现在还能用吗？</summary>
+              <div class="faq-answer">部分可用。截至2026年11月8日，输入“zxcvb”加任意三位数字仍可跳转至测试商品列表，但商品数量从年初的200多个减少到23个，且大部分显示“已下架”，仅作入口验证用。</div>
+            </details>
+            <details>
+              <summary>Please Don't Tell 酒吧的暗号是什么？</summary>
+              <div class="faq-answer">2026年10月新菜单的暗号是“Sherlock”，向吧台调酒师说出后可以点隐藏特调“221B”，基酒是波本威士忌加烟熏枫糖。暗号每月更换，出发前可以查看店方Instagram置顶帖。</div>
+            </details>
+            <details>
+              <summary>安卓连点开发者模式会清除数据吗？</summary>
+              <div class="faq-answer">不会。开发者模式只是开放了调试接口，不重置设备。但进入后不要随意修改“窗口动画缩放”“后台进程限制”等选项，部分设置可能导致应用闪退。退出开发者模式在设置→系统→开发者选项底部。</div>
+            </details>
+          </div>
+        </section>
+
+        <!-- 用户评论 -->
+        <section class="section" id="comments">
+          <div class="section-header">
+            <h2 class="section-title">探索者留言</h2>
+          </div>
+          <div class="comment-grid">
+            <div class="comment-item">
+              <div class="comment-avatar">陈</div>
+              <div class="comment-body">
+                <div class="comment-user">陈默</div>
+                <div class="comment-text">上周去的鹅岭防空洞书店，台阶真的滑，建议穿防滑鞋。里面那套1980年代的油印诗集不错，可惜不能拍照。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">L</div>
+              <div class="comment-body">
+                <div class="comment-user">Leo_2077</div>
+                <div class="comment-text">幽影城那个十二连战试了六次，每次都死在第十个的双熔炉骑士，放弃了。视频里看门后房间不大，等DLC打折再说吧。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">K</div>
+              <div class="comment-body">
+                <div class="comment-user">Katherine_W</div>
+                <div class="comment-text">哈佛那批明信片的扫描件在官网能下，分辨率还行，但点阵区域还是得用显微镜。我导出了局部做放大，三组坐标确实对应伦敦地铁站。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">张</div>
+              <div class="comment-body">
+                <div class="comment-user">张三疯</div>
+                <div class="comment-text">淘宝代码那个我试了，zxcvb123确实跳转，但商品都灰了。感觉是测试遗留没清干净。另外Android 15上可以，鸿蒙不行。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">M</div>
+              <div class="comment-body">
+                <div class="comment-user">Mia在纽约</div>
+                <div class="comment-text">PDT的暗号每个月换，上个月是“Watson”这个月是“Sherlock”，去了三次才碰到对的。热狗店的热狗其实一般，但电话亭开门那下还是值了。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">王</div>
+              <div class="comment-body">
+                <div class="comment-user">王建国</div>
+                <div class="comment-text">前门地下城第4入口是我发现的，街道办说不让进，但站在外面看看通风井还是可以的。井壁上的字是“1976年检修”，下面还有一行小字被水泥盖了。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">Z</div>
+              <div class="comment-body">
+                <div class="comment-user">Zoe_探索中</div>
+                <div class="comment-text">成都玉林那个书店暗门，老板说拉书顺序不能错。我试了三次才打开，密室里的油印诗刊有股霉味，但内容挺有意思，有一首写府南河的。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">Rock</div>
+              <div class="comment-body">
+                <div class="comment-user">Rocky_Liu</div>
+                <div class="comment-text">安卓连点这个太基础了吧，大部分玩机的都知道。倒是三星只要5次让我意外，之前一直以为全是7次。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">N</div>
+              <div class="comment-body">
+                <div class="comment-user">Nora_99</div>
+                <div class="comment-text">《心灵杀手2》DLC那个手电筒照墙真的一开始以为是bug，照了快一分钟才开门。房间里的概念画有张Sam Lake在2019年的草图，挺珍贵的。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">刘</div>
+              <div class="comment-body">
+                <div class="comment-user">刘小胖</div>
+                <div class="comment-text">Aldwych站导览35英镑有点贵，不过能下到1994年关的站台确实少见。导览员讲了个细节：站台墙上还有二战时的防空洞指示牌。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">阿</div>
+              <div class="comment-body">
+                <div class="comment-user">阿茶</div>
+                <div class="comment-text">微信表情雨那个，输入“初雪”真的有雪花掉下来，试了两次都成功了。不过只有在聊天窗口里才有。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">Y</div>
+              <div class="comment-body">
+                <div class="comment-user">Yuki_H</div>
+                <div class="comment-text">感觉城市暗门类的内容有点少，大部分是国外的。国内其实很多老厂区、老医院都有类似空间，就是进不去。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">D</div>
+              <div class="comment-body">
+                <div class="comment-user">Daniel_CN</div>
+                <div class="comment-text">《博德之门3》新结局那个，死者交谈对墙面用之前要先给自己套防护，不然对话结束会掉血。别问我怎么知道的。</div>
+              </div>
+            </div>
+            <div class="comment-item">
+              <div class="comment-avatar">小</div>
+              <div class="comment-body">
+                <div class="comment-user">小满</div>
+                <div class="comment-text">维基隐藏条目那个列表我翻过，大部分是格式错误的页面，真正有意思的不超过20个。不过Mapster确实整理得很细，每个都标了发现时间。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 相关资讯 -->
+        <section class="section" id="news">
+          <div class="section-header">
+            <h2 class="section-title">入口相关资讯</h2>
+          </div>
+          <div class="news-list">
+            <div class="news-item">
+              <span class="news-date">2026-11-07</span>
+              <div class="news-content">
+                <div class="news-title">伦敦交通局确认Aldwych站导览延长至2027年3月</div>
+                <div class="news-summary">原定2026年底结束的导览因预约量超预期，加开至2027年3月27日。新增周五晚场，票价不变，每场仍限20人。10月共接待420人，取消率仅3%。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-05</span>
+              <div class="news-content">
+                <div class="news-title">《艾尔登法环》1.16补丁调整幽影城暗门判定范围</div>
+                <div class="news-summary">万代南梦宫在更新说明中确认，十二连战的计数判定范围从圆形区域改为矩形区域，宽度增加1.5米，避免玩家因轻微走位脱离计数。补丁于11月4日上线。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-11-03</span>
+              <div class="news-content">
+                <div class="news-title">霍顿图书馆将微缩点字明信片数字化上线</div>
+                <div class="news-summary">7张明信片的高清扫描件已加入哈佛数字馆藏，支持40倍放大浏览。馆方同时公开了Sarah Kessler的检测报告全文，共14页，含纤维分析数据。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-31</span>
+              <div class="news-content">
+                <div class="news-title">淘宝回应隐藏搜索代码：历史测试页面，将逐步清理</div>
+                <div class="news-summary">阿里巴巴公关部在10月31日回复《电商在线》询问时表示，相关页面为早期功能测试遗留，已列入清理计划，但未给出具体时间表。目前可触发条目已从年初的200余个降至23个。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-28</span>
+              <div class="news-content">
+                <div class="news-title">北京前门地下城第4入口被属地街道要求暂时封闭</div>
+                <div class="news-summary">大栅栏街道办11月1日张贴告示，称该通风竖井“未取得人防工程开放许可”，要求产权方在30日内完成封闭。发现者王建国称已提交历史建筑调查申请。</div>
+              </div>
+            </div>
+            <div class="news-item">
+              <span class="news-date">2026-10-25</span>
+              <div class="news-content">
+                <div class="news-title">Kraftwerk Berlin暗门舞池因消防检查暂停开放</div>
+                <div class="news-summary">柏林消防局10月24日检查发现，小舞池的应急出口宽度不足0.9米，不符合当地公共场所条例。俱乐部宣布整改两周，预计11月10日恢复，但需缩减容量至8人。</div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 相关推荐 -->
+        <section class="section" id="related">
+          <div class="section-header">
+            <h2 class="section-title">你可能还想找</h2>
+          </div>
+          <div class="tag-cloud">
+            <a href="/#featured" class="tag-link">废弃防空洞改造</a>
+            <a href="/#featured" class="tag-link">游戏隐藏关卡触发条件</a>
+            <a href="/#featured" class="tag-link">微缩点字技术</a>
+            <a href="/#featured" class="tag-link">淘宝隐藏搜索代码</a>
+            <a href="/#featured" class="tag-link">电话亭暗门酒吧</a>
+            <a href="/#featured" class="tag-link">安卓开发者模式连点次数</a>
+            <a href="/#featured" class="tag-link">二战档案隐写</a>
+            <a href="/#featured" class="tag-link">废弃地铁站导览</a>
+          </div>
+        </section>
+
+        <!-- 热门榜单 -->
+        <section class="section" id="rank">
+          <div class="section-header">
+            <h2 class="section-title">本周热度榜</h2>
+          </div>
+          <div class="rank-list">
+            <div class="rank-item">
+              <span class="rank-num top">1</span>
+              <span class="rank-name">幽影城地下十二连战暗门</span>
+              <span class="rank-score">热度 4.9</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num top">2</span>
+              <span class="rank-name">Please Don't Tell 电话亭暗门</span>
+              <span class="rank-score">热度 4.8</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num top">3</span>
+              <span class="rank-name">重庆鹅岭防空洞书店</span>
+              <span class="rank-score">热度 4.7</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">4</span>
+              <span class="rank-name">霍顿图书馆微缩点字明信片</span>
+              <span class="rank-score">热度 4.6</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">5</span>
+              <span class="rank-name">淘宝“神秘代码”搜索入口</span>
+              <span class="rank-score">热度 4.3</span>
+            </div>
+            <div class="rank-item">
+              <span class="rank-num">6</span>
+              <span class="rank-name">安卓版本号连点七次</span>
+              <span class="rank-score">热度 4.1</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- 投稿互动 -->
+        <section class="section" id="submit">
+          <div class="submit-panel">
+            <div>
+              <h3>发现了一个入口？</h3>
+              <p>提交坐标、触发条件或文献线索，经核实后会收录进条目库。</p>
+            </div>
+            <button class="btn-submit-panel" onclick="alert('投稿功能为示例入口，实际页面未接入后端。')">提交线索</button>
+          </div>
+        </section>
+      </main>
+
+      <!-- 右侧辅助栏 -->
+      <aside class="sidebar-right" aria-label="辅助信息">
+        <div class="sidebar-card">
+          <div class="sidebar-title">正在发生</div>
+          <div class="hot-list">
+            <div class="hot-item"><span class="hot-index top1">1</span><span class="hot-name">幽影城暗门补丁调整</span><span class="hot-tag">游戏</span></div>
+            <div class="hot-item"><span class="hot-index top2">2</span><span class="hot-name">前门地下城入口封闭</span><span class="hot-tag">城市</span></div>
+            <div class="hot-item"><span class="hot-index top3">3</span><span class="hot-name">霍顿明信片数字化</span><span class="hot-tag">文献</span></div>
+            <div class="hot-item"><span class="hot-index">4</span><span class="hot-name">Aldwych导览延长</span><span class="hot-tag">地铁</span></div>
+            <div class="hot-item"><span class="hot-index">5</span><span class="hot-name">Kraftwerk消防整改</span><span class="hot-tag">俱乐部</span></div>
+            <div class="hot-item"><span class="hot-index">6</span><span class="hot-name">淘宝清理测试页面</span><span class="hot-tag">数字</span></div>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">条目类型分布</div>
+          <div style="font-size:13px;color:var(--text-secondary);line-height:2;">
+            <div>城市暗门 · 86 条</div>
+            <div>游戏彩蛋 · 71 条</div>
+            <div>文献暗号 · 53 条</div>
+            <div>数字迷宫 · 42 条</div>
+            <div>废弃空间 · 64 条</div>
+          </div>
+        </div>
+        <div class="sidebar-card">
+          <div class="sidebar-title">最近提交</div>
+          <div style="font-size:13px;color:var(--text-secondary);line-height:1.8;">
+            <div style="padding:6px 0;border-bottom:1px solid var(--border);">广州沙面旧仓库暗梯 <span style="color:var(--text-tertiary);font-size:11px;float:right;">11-08</span></div>
+            <div style="padding:6px 0;border-bottom:1px solid var(--border);">《动物井》第4层隐藏区域 <span style="color:var(--text-tertiary);font-size:11px;float:right;">11-07</span></div>
+            <div style="padding:6px 0;">1948年上海电话簿夹页标记 <span style="color:var(--text-tertiary);font-size:11px;float:right;">11-05</span></div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-brand">
+          <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="32" height="32" rx="6" fill="#e6b422"/>
+            <path d="M8 20 L16 8 L24 20" stroke="#1e2a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+            <circle cx="16" cy="22" r="2.5" fill="#1e2a3a"/>
+          </svg>
+          秘密入口
+        </div>
+        <p class="footer-desc">收录 2024 年至今的 387 条入口记录，涵盖城市暗门、游戏彩蛋、文献暗号与数字交互。每周新增 6—10 条，每月发布一次可信度复检报告。</p>
+      </div>
+      <div class="footer-col">
+        <h4>频道</h4>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+      </div>
+      <div class="footer-col">
+        <h4>探索</h4>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#comments">用户评论</a>
+        <a href="/#news">相关资讯</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动</h4>
+        <a href="/#submit">投稿入口</a>
+        <a href="/#rank">热门榜单</a>
+        <a href="/#related">相关推荐</a>
+        <a href="/#overview">领域概览</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 秘密入口 · 内容为示例条目，部分事实引用公开报道</span>
+      <span>页面更新于 2026-11-08 09:00</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-to-top" id="backToTop" aria-label="回到顶部">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+      <polyline points="18 15 12 9 6 15"/>
+    </svg>
+  </button>
+
+  <script>
+    (function() {
+      // 移动端菜单
+      const mobileToggle = document.getElementById('mobileToggle');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileOverlay = document.getElementById('mobileOverlay');
+      const closeMenu = document.getElementById('closeMenu');
+
+      function openMenu() {
+        mobileMenu.classList.add('open');
+        mobileOverlay.classList.add('active');
+        mobileToggle.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeMenuFn() {
+        mobileMenu.classList.remove('open');
+        mobileOverlay.classList.remove('active');
+        mobileToggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      mobileToggle.addEventListener('click', openMenu);
+      closeMenu.addEventListener('click', closeMenuFn);
+      mobileOverlay.addEventListener('click', closeMenuFn);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+          closeMenuFn();
+        }
+      });
+      mobileMenu.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', closeMenuFn);
+      });
+
+      // 回到顶部
+      const backToTop = document.getElementById('backToTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 400) {
+          backToTop.classList.add('visible');
+        } else {
+          backToTop.classList.remove('visible');
+        }
+      });
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 本地搜索筛选
+      const searchInput = document.getElementById('searchInput');
+      const searchBtn = document.getElementById('searchBtn');
+      const featuredGrid = document.getElementById('featuredGrid');
+      const noResult = document.getElementById('noResult');
+      const cards = featuredGrid ? Array.from(featuredGrid.querySelectorAll('.content-card')) : [];
+
+      function filterCards() {
+        const query = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+        cards.forEach(card => {
+          const title = (card.getAttribute('data-title') || '').toLowerCase();
+          const textContent = card.textContent.toLowerCase();
+          const matches = !query || title.includes(query) || textContent.includes(query);
+          card.style.display = matches ? '' : 'none';
+          if (matches) visibleCount++;
+        });
+        if (noResult) {
+          noResult.classList.toggle('show', visibleCount === 0 && query !== '');
+        }
+        if (featuredGrid) {
+          featuredGrid.style.display = visibleCount === 0 && query !== '' ? 'none' : '';
+        }
+      }
+
+      if (searchBtn && searchInput) {
+        searchBtn.addEventListener('click', filterCards);
+        searchInput.addEventListener('input', filterCards);
+      }
+
+      // 侧栏高亮
+      const sections = document.querySelectorAll('.section[id]');
+      const channelLinks = document.querySelectorAll('.channel-nav a');
+      if (sections.length && channelLinks.length) {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              const id = entry.target.id;
+              channelLinks.forEach(link => {
+                link.classList.toggle('active', link.getAttribute('href') === '/#' + id);
+              });
+            }
+          });
+        }, { rootMargin: '-20% 0px -60% 0px' });
+        sections.forEach(section => observer.observe(section));
+      }
+    })();
+  </script>
+</body>
+  </html>
