@@ -1,0 +1,1423 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>R星吃瓜最新消息 - 游戏动态与社区热议聚合</title>
+  <meta name="description" content="R星吃瓜最新消息聚合GTA6、荒野大镖客2、R星招聘动向等具体条目，涵盖玩家实测、官方公告与社区讨论。适合关注开放世界游戏、MOD争议与线上模式更新的玩家阅读。">
+  <meta name="keywords" content="R星吃瓜最新消息">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23f2b01e'/%3E%3Ctext x='16' y='23' font-size='18' font-weight='bold' text-anchor='middle' fill='%231b1b2f'%3ER%3C/text%3E%3C/svg%3E">
+  <style>
+    :root {
+      --brand: #f2b01e;
+      --brand-light: #ffd966;
+      --brand-dark: #b87c00;
+      --bg: #f7f6f2;
+      --surface: #ffffff;
+      --surface-alt: #f1efe9;
+      --ink: #1e1e2a;
+      --ink-2: #4a4a5a;
+      --ink-3: #7c7c8c;
+      --line: #e2dfd6;
+      --radius-card: 14px;
+      --radius-btn: 8px;
+      --radius-tag: 4px;
+      --shadow: 0 2px 8px rgba(20, 20, 40, 0.06);
+      --shadow-hover: 0 6px 18px rgba(20, 20, 40, 0.1);
+      --font: 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+      --max-w: 1320px;
+      --announce-h: 38px;
+      --header-h: 62px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: calc(var(--announce-h) + var(--header-h) + 6px); }
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; text-decoration: none; }
+    ul, ol { list-style: none; }
+    img { display: block; max-width: 100%; height: auto; object-fit: cover; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+    /* 吸顶公告条 */
+    .announce-bar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: var(--announce-h);
+      background: linear-gradient(90deg, #1b1b2f, #2d2d44);
+      color: #ffe9a8;
+      display: flex;
+      align-items: center;
+      font-size: 13px;
+      padding: 0 18px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    .announce-bar .brand-inline {
+      font-weight: 700;
+      color: var(--brand-light);
+      margin-right: 18px;
+      flex-shrink: 0;
+      letter-spacing: 0.5px;
+    }
+    .announce-track {
+      display: flex;
+      gap: 32px;
+      animation: scrollAnnounce 36s linear infinite;
+    }
+    .announce-track span { display: inline-flex; align-items: center; gap: 6px; }
+    .announce-track .dot { color: var(--brand); font-weight: 700; }
+    @keyframes scrollAnnounce {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .announce-track { animation: none; }
+    }
+
+    /* 页头 */
+    .site-header {
+      position: sticky;
+      top: var(--announce-h);
+      z-index: 99;
+      height: var(--header-h);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--line);
+      display: flex;
+      align-items: center;
+    }
+    .header-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      width: 100%;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      gap: 22px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      flex-shrink: 0;
+    }
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      border-radius: 9px;
+      background: linear-gradient(135deg, var(--brand), var(--brand-dark));
+      display: grid;
+      place-items: center;
+      color: #1b1b2f;
+      font-weight: 800;
+      font-size: 19px;
+      box-shadow: 0 2px 6px rgba(184, 124, 0, 0.3);
+    }
+    .logo-text {
+      font-weight: 800;
+      font-size: 17px;
+      letter-spacing: 0.2px;
+      color: var(--ink);
+    }
+    .main-nav {
+      display: flex;
+      gap: 4px;
+      flex: 1;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .main-nav::-webkit-scrollbar { display: none; }
+    .main-nav a {
+      padding: 7px 12px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      color: var(--ink-2);
+      white-space: nowrap;
+      transition: background 0.2s, color 0.2s;
+    }
+    .main-nav a:hover { background: var(--surface-alt); color: var(--ink); }
+    .main-nav a.active { background: var(--brand); color: #1b1b2f; font-weight: 600; }
+    .header-actions { display: flex; gap: 8px; flex-shrink: 0; }
+    .btn-ghost {
+      padding: 7px 14px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      border: 1px solid var(--line);
+      color: var(--ink-2);
+      background: var(--surface);
+      transition: all 0.2s;
+    }
+    .btn-ghost:hover { border-color: var(--brand); color: var(--ink); }
+    .btn-primary {
+      padding: 7px 16px;
+      border-radius: var(--radius-btn);
+      font-size: 13px;
+      background: var(--brand);
+      color: #1b1b2f;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .btn-primary:hover { background: var(--brand-light); }
+    .hamburger {
+      display: none;
+      width: 38px;
+      height: 38px;
+      border-radius: var(--radius-btn);
+      place-items: center;
+      font-size: 20px;
+      color: var(--ink);
+      background: var(--surface-alt);
+    }
+
+    /* 首屏 */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #1b1b2f 0%, #2d2d44 55%, #3d2d1a 100%);
+      color: #fff;
+      padding: 48px 0 40px;
+    }
+    .hero-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 0 18px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-block;
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--brand-light);
+      border: 1px solid rgba(242, 176, 30, 0.4);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 16px;
+    }
+    .hero h1 {
+      font-size: 38px;
+      line-height: 1.25;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      color: #fff;
+    }
+    .hero-desc {
+      font-size: 15px;
+      color: #c9c9d6;
+      max-width: 520px;
+      margin-bottom: 22px;
+      line-height: 1.7;
+    }
+    .hero-desc strong { color: var(--brand-light); font-weight: 600; }
+    .hero-meta {
+      display: flex;
+      gap: 22px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .hero-meta-item { font-size: 13px; color: #a8a8bc; }
+    .hero-meta-item b { display: block; font-size: 20px; color: #fff; font-weight: 700; }
+    .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn-hero {
+      padding: 11px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 600;
+      background: var(--brand);
+      color: #1b1b2f;
+      transition: transform 0.2s, background 0.2s;
+    }
+    .btn-hero:hover { background: var(--brand-light); transform: translateY(-2px); }
+    .btn-hero-outline {
+      padding: 11px 24px;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      border: 1px solid rgba(255,255,255,0.3);
+      color: #fff;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .btn-hero-outline:hover { border-color: var(--brand); background: rgba(242,176,30,0.1); }
+
+    .hero-visual {
+      position: relative;
+      height: 300px;
+      display: grid;
+      place-items: center;
+    }
+    .hero-visual svg { width: 100%; height: 100%; max-height: 320px; }
+
+    /* 主布局 */
+    .layout {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      padding: 28px 18px 10px;
+      display: grid;
+      grid-template-columns: 176px minmax(0, 1fr) 248px;
+      gap: 26px;
+      align-items: start;
+    }
+
+    /* 左频道 */
+    .channel-aside {
+      position: sticky;
+      top: calc(var(--announce-h) + var(--header-h) + 14px);
+    }
+    .channel-title {
+      font-size: 12px;
+      letter-spacing: 1px;
+      color: var(--ink-3);
+      margin-bottom: 10px;
+      font-weight: 600;
+      text-transform: uppercase;
+      padding-left: 4px;
+    }
+    .channel-list { display: flex; flex-direction: column; gap: 2px; }
+    .channel-list a {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 8px 10px;
+      border-radius: var(--radius-btn);
+      font-size: 13.5px;
+      color: var(--ink-2);
+      transition: background 0.2s, color 0.2s;
+    }
+    .channel-list a:hover { background: var(--surface-alt); color: var(--ink); }
+    .channel-list a.current { background: var(--brand); color: #1b1b2f; font-weight: 600; }
+    .channel-list .count { font-size: 11px; color: var(--ink-3); font-weight: 400; }
+    .channel-list a.current .count { color: #4a3a10; }
+
+    /* 主栏 */
+    .main-col { min-width: 0; }
+    .section { margin-bottom: 34px; }
+    .section-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+    }
+    .section-head h2 {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      color: var(--ink);
+    }
+    .section-head .more { font-size: 12px; color: var(--ink-3); }
+    .section-head .more:hover { color: var(--brand-dark); }
+
+    /* 概览 */
+    .overview-text {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 20px 22px;
+      box-shadow: var(--shadow);
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.8;
+    }
+    .overview-text p + p { margin-top: 10px; }
+    .overview-text strong { color: var(--ink); }
+
+    /* 精选卡片 */
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+      gap: 16px;
+    }
+    .card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+    }
+    .card:hover { transform: translateY(-3px); box-shadow: var(--shadow-hover); }
+    .card-img { width: 100%; height: 130px; object-fit: cover; }
+    .card-body { padding: 13px 14px 14px; display: flex; flex-direction: column; flex: 1; }
+    .card-type {
+      display: inline-block;
+      font-size: 11px;
+      background: var(--surface-alt);
+      color: var(--brand-dark);
+      padding: 2px 7px;
+      border-radius: var(--radius-tag);
+      margin-bottom: 7px;
+      font-weight: 600;
+      align-self: flex-start;
+    }
+    .card-title {
+      font-size: 15px;
+      font-weight: 700;
+      line-height: 1.4;
+      margin-bottom: 6px;
+      color: var(--ink);
+    }
+    .card-desc {
+      font-size: 12.5px;
+      color: var(--ink-3);
+      line-height: 1.6;
+      flex: 1;
+      margin-bottom: 9px;
+    }
+    .card-tags { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 8px; }
+    .card-tags span {
+      font-size: 11px;
+      background: var(--surface-alt);
+      color: var(--ink-2);
+      padding: 1px 6px;
+      border-radius: var(--radius-tag);
+    }
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      font-size: 11px;
+      color: var(--ink-3);
+      border-top: 1px solid var(--line);
+      padding-top: 7px;
+    }
+    .card-meta .hot { color: var(--brand-dark); font-weight: 600; }
+
+    /* 动态列表 */
+    .update-list { display: flex; flex-direction: column; gap: 0; }
+    .update-item {
+      display: grid;
+      grid-template-columns: 58px 1fr auto;
+      gap: 12px;
+      padding: 11px 4px;
+      border-bottom: 1px solid var(--line);
+      align-items: baseline;
+      transition: background 0.2s;
+    }
+    .update-item:hover { background: var(--surface-alt); }
+    .update-date { font-size: 12px; color: var(--ink-3); font-weight: 600; }
+    .update-name { font-size: 14px; font-weight: 600; color: var(--ink); }
+    .update-name span { font-weight: 400; color: var(--ink-2); font-size: 13px; margin-left: 6px; }
+    .update-tag { font-size: 11px; color: var(--brand-dark); background: #fdf3d8; padding: 1px 7px; border-radius: var(--radius-tag); white-space: nowrap; }
+
+    /* 分类入口 */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+      gap: 10px;
+    }
+    .cat-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 14px 14px;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .cat-item:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .cat-item .cat-name { font-size: 14px; font-weight: 700; color: var(--ink); }
+    .cat-item .cat-desc { font-size: 12px; color: var(--ink-3); }
+
+    /* 深度解析 */
+    .deep-text {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 24px 26px;
+      box-shadow: var(--shadow);
+      font-size: 14.5px;
+      color: var(--ink-2);
+      line-height: 1.85;
+    }
+    .deep-text h3 {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 18px 0 8px;
+    }
+    .deep-text h3:first-child { margin-top: 0; }
+    .deep-text p { margin-bottom: 10px; }
+    .deep-text ul { margin: 8px 0 12px 18px; list-style: disc; }
+    .deep-text li { margin-bottom: 5px; }
+    .deep-text strong { color: var(--ink); }
+
+    /* 指南步骤 */
+    .guide-steps { display: flex; flex-direction: column; gap: 12px; }
+    .guide-step {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+    }
+    .step-num {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #1b1b2f;
+      font-weight: 700;
+      font-size: 14px;
+      display: grid;
+      place-items: center;
+      flex-shrink: 0;
+    }
+    .step-title { font-size: 14.5px; font-weight: 700; color: var(--ink); margin-bottom: 3px; }
+    .step-desc { font-size: 13px; color: var(--ink-2); }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    details.faq-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    details.faq-item summary {
+      padding: 14px 18px;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    details.faq-item summary::-webkit-details-marker { display: none; }
+    details.faq-item summary::after {
+      content: '+';
+      font-size: 18px;
+      color: var(--brand-dark);
+      font-weight: 400;
+      transition: transform 0.2s;
+    }
+    details.faq-item[open] summary::after { content: '−'; }
+    .faq-answer {
+      padding: 0 18px 15px;
+      font-size: 13.5px;
+      color: var(--ink-2);
+      line-height: 1.75;
+      border-top: 1px solid var(--line);
+      padding-top: 12px;
+    }
+
+    /* 评论区 */
+    .comment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+      gap: 12px;
+    }
+    .comment-card {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 13px 15px;
+      box-shadow: var(--shadow);
+      font-size: 13px;
+      color: var(--ink-2);
+      line-height: 1.65;
+    }
+    .comment-user { font-size: 12.5px; font-weight: 700; color: var(--ink); margin-bottom: 4px; display: flex; justify-content: space-between; }
+    .comment-user .time { font-weight: 400; color: var(--ink-3); font-size: 11px; }
+    .comment-text { font-size: 13px; }
+
+    /* 资讯 */
+    .news-list { display: flex; flex-direction: column; gap: 12px; }
+    .news-item {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 18px;
+      box-shadow: var(--shadow);
+    }
+    .news-item h3 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--ink); }
+    .news-item .meta { font-size: 11.5px; color: var(--ink-3); margin-bottom: 6px; }
+    .news-item p { font-size: 13px; color: var(--ink-2); }
+
+    /* 相关推荐 */
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag-cloud a {
+      font-size: 13px;
+      padding: 6px 14px;
+      border-radius: 20px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+      color: var(--ink-2);
+      transition: all 0.2s;
+    }
+    .tag-cloud a:hover { border-color: var(--brand); color: var(--ink); background: #fdf6e3; }
+
+    /* 补充：时间线 */
+    .timeline { display: flex; flex-direction: column; gap: 0; position: relative; padding-left: 18px; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 4px; top: 6px; bottom: 6px;
+      width: 2px;
+      background: var(--line);
+    }
+    .tl-item { position: relative; padding: 6px 0 14px 12px; }
+    .tl-item::before {
+      content: '';
+      position: absolute;
+      left: -18px; top: 12px;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--brand);
+      border: 2px solid var(--surface);
+      box-shadow: 0 0 0 1px var(--brand);
+    }
+    .tl-date { font-size: 11.5px; color: var(--brand-dark); font-weight: 700; }
+    .tl-text { font-size: 13px; color: var(--ink-2); }
+
+    /* 右侧辅助栏 */
+    .side-col { position: sticky; top: calc(var(--announce-h) + var(--header-h) + 14px); display: flex; flex-direction: column; gap: 18px; }
+    .side-panel {
+      background: var(--surface);
+      border-radius: var(--radius-card);
+      padding: 16px 16px;
+      box-shadow: var(--shadow);
+    }
+    .side-panel h3 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .side-panel h3 .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand); display: inline-block; }
+    .side-list { display: flex; flex-direction: column; gap: 8px; }
+    .side-list a {
+      font-size: 13px;
+      color: var(--ink-2);
+      display: flex;
+      gap: 7px;
+      align-items: baseline;
+      line-height: 1.5;
+    }
+    .side-list a:hover { color: var(--brand-dark); }
+    .side-list .num { font-size: 11px; font-weight: 700; color: var(--brand-dark); min-width: 14px; }
+
+    .side-stat { display: flex; flex-direction: column; gap: 8px; }
+    .side-stat-row { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-2); }
+    .side-stat-row b { color: var(--ink); }
+
+    /* 页尾 */
+    .site-footer {
+      background: #1b1b2f;
+      color: #b8b8c6;
+      margin-top: 40px;
+      padding: 38px 18px 24px;
+    }
+    .footer-inner {
+      max-width: var(--max-w);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, 1fr);
+      gap: 30px;
+    }
+    .footer-brand .logo-text { color: #fff; }
+    .footer-brand p { font-size: 13px; margin-top: 10px; line-height: 1.7; max-width: 300px; }
+    .footer-col h4 { font-size: 13px; color: #fff; margin-bottom: 10px; font-weight: 700; }
+    .footer-col a { display: block; font-size: 12.5px; padding: 3px 0; color: #9f9fb2; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--brand-light); }
+    .footer-bottom {
+      max-width: var(--max-w);
+      margin: 26px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      font-size: 12px;
+      color: #6d6d80;
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    /* 回到顶部 */
+    .back-top {
+      position: fixed;
+      right: 20px;
+      bottom: 24px;
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--brand);
+      color: #1b1b2f;
+      font-size: 18px;
+      font-weight: 700;
+      display: grid;
+      place-items: center;
+      box-shadow: 0 4px 14px rgba(184, 124, 0, 0.4);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.25s, visibility 0.25s, transform 0.2s;
+      z-index: 90;
+    }
+    .back-top.show { opacity: 1; visibility: visible; }
+    .back-top:hover { transform: translateY(-3px); }
+
+    /* 移动端抽屉 */
+    .mobile-nav {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+    }
+    .mobile-nav.open { display: block; }
+    .mobile-nav-mask {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.45);
+    }
+    .mobile-nav-panel {
+      position: absolute;
+      top: 0; left: 0;
+      width: 82%;
+      max-width: 320px;
+      height: 100%;
+      background: var(--surface);
+      padding: 22px 18px;
+      overflow-y: auto;
+      box-shadow: 4px 0 20px rgba(0,0,0,0.2);
+    }
+    .mobile-nav-panel h3 { font-size: 13px; color: var(--ink-3); margin-bottom: 12px; letter-spacing: 1px; }
+    .mobile-nav-panel a { display: block; padding: 10px 8px; border-radius: var(--radius-btn); font-size: 14px; color: var(--ink-2); }
+    .mobile-nav-panel a:hover { background: var(--surface-alt); }
+    .mobile-close {
+      position: absolute;
+      top: 14px; right: 14px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      background: var(--surface-alt);
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      color: var(--ink);
+    }
+
+    /* 响应式 */
+    @media (max-width: 1024px) {
+      .layout {
+        grid-template-columns: 1fr 260px;
+      }
+      .channel-aside {
+        display: none;
+      }
+      .hero-inner { grid-template-columns: 1fr; gap: 22px; }
+      .hero-visual { height: 200px; }
+      .hero h1 { font-size: 32px; }
+    }
+    @media (max-width: 740px) {
+      .layout { grid-template-columns: 1fr; padding: 18px 14px; }
+      .side-col { position: static; order: 2; }
+      .main-col { order: 1; }
+      .main-nav { display: none; }
+      .header-actions .btn-ghost { display: none; }
+      .hamburger { display: grid; }
+      .hero { padding: 34px 0 30px; }
+      .hero h1 { font-size: 27px; }
+      .hero-inner { gap: 18px; }
+      .hero-visual { height: 160px; }
+      .footer-inner { grid-template-columns: 1fr 1fr; gap: 22px; }
+      .footer-brand { grid-column: 1 / -1; }
+      .card-grid { grid-template-columns: 1fr 1fr; }
+      .comment-grid { grid-template-columns: 1fr; }
+      .cat-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 420px) {
+      .card-grid { grid-template-columns: 1fr; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      * { animation: none !important; transition: none !important; }
+    }
+  </style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+  <!-- 吸顶公告条 -->
+  <div class="announce-bar">
+    <span class="brand-inline">R星吃瓜最新消息</span>
+    <div class="announce-track">
+      <span><span class="dot">●</span> 11月6日 GTA6 地图泄漏片段在Reddit获2.3k回复</span>
+      <span><span class="dot">●</span> 11月7日 荒野大镖客2 线上模式新增“万圣节通行证2”奖励</span>
+      <span><span class="dot">●</span> 11月5日 R星北方工作室招聘页面新增“载具物理程序师”岗位</span>
+      <span><span class="dot">●</span> 11月4日 GTA三部曲最终版 移动端更新1.4.2修复雨天卡顿</span>
+    </div>
+  </div>
+
+  <!-- 页头 -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="/#hero" class="logo">
+        <span class="logo-mark">R</span>
+        <span class="logo-text">R星吃瓜最新消息</span>
+      </a>
+      <nav class="main-nav" aria-label="主题导航">
+        <a href="/#overview" class="active">领域概览</a>
+        <a href="/#featured">精选推荐</a>
+        <a href="/#updates">最新动态</a>
+        <a href="/#categories">分类入口</a>
+        <a href="/#deep-dive">深度解析</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#faq">常见问题</a>
+        <a href="/#comments">玩家评论</a>
+        <a href="/#news">相关资讯</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#timeline">时间线</a>
+      </nav>
+      <div class="header-actions">
+        <a href="/#comments" class="btn-ghost">投稿</a>
+        <a href="/#featured" class="btn-primary">围观热帖</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="打开菜单" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- 首屏 -->
+  <section class="hero" id="hero">
+    <div class="hero-inner">
+      <div class="hero-content">
+        <span class="hero-tag">开放世界 · 玩家社区 · 实时讨论</span>
+        <h1>R星吃瓜最新消息</h1>
+        <p class="hero-desc">
+          这里汇集<strong>GTA6 实机片段分析、荒野大镖客2 线上更新、R星招聘动向与 MOD 争议</strong>等具体条目。从 Reddit 热帖到 B 站 UP 主拆包，把开发进度、社区反应和版本变动放在一起看。
+        </p>
+        <div class="hero-meta">
+          <div class="hero-meta-item"><b>17</b> 条今日更新</div>
+          <div class="hero-meta-item"><b>9</b> 个活跃讨论帖</div>
+          <div class="hero-meta-item"><b>11月8日</b> 最后汇总</div>
+        </div>
+        <div class="hero-cta">
+          <a href="/#updates" class="btn-hero">看最新动态</a>
+          <a href="/#deep-dive" class="btn-hero-outline">读深度解析</a>
+        </div>
+      </div>
+      <div class="hero-visual" aria-hidden="true">
+        <svg viewBox="0 0 400 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#f2b01e" stop-opacity="0.9"/>
+              <stop offset="100%" stop-color="#b87c00" stop-opacity="0.5"/>
+            </linearGradient>
+            <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#ffffff" stop-opacity="0.02"/>
+            </linearGradient>
+          </defs>
+          <rect x="30" y="40" width="340" height="220" rx="16" fill="url(#g2)" stroke="rgba(255,255,255,0.1)"/>
+          <circle cx="120" cy="110" r="38" fill="url(#g1)" opacity="0.8"/>
+          <circle cx="120" cy="110" r="38" stroke="#ffe9a8" stroke-width="1.5" stroke-dasharray="4 4" fill="none"/>
+          <rect x="180" y="80" width="160" height="12" rx="6" fill="#ffffff" opacity="0.2"/>
+          <rect x="180" y="104" width="120" height="10" rx="5" fill="#ffffff" opacity="0.12"/>
+          <rect x="180" y="126" width="140" height="10" rx="5" fill="#ffffff" opacity="0.12"/>
+          <rect x="60" y="175" width="90" height="52" rx="8" fill="url(#g1)" opacity="0.35"/>
+          <rect x="165" y="175" width="90" height="52" rx="8" fill="#ffffff" opacity="0.08"/>
+          <rect x="270" y="175" width="70" height="52" rx="8" fill="#ffffff" opacity="0.06"/>
+          <circle cx="340" cy="70" r="18" fill="#f2b01e" opacity="0.25"/>
+          <circle cx="340" cy="70" r="18" stroke="#f2b01e" stroke-width="1" fill="none" opacity="0.5"/>
+          <path d="M48 240 Q100 210 160 230 T300 220" stroke="#ffe9a8" stroke-width="1.5" fill="none" opacity="0.3" stroke-dasharray="3 3"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- 主体三栏 -->
+  <div class="layout">
+
+    <!-- 左频道索引 -->
+    <aside class="channel-aside" aria-label="频道索引">
+      <div class="channel-title">频道索引</div>
+      <nav class="channel-list">
+        <a href="/#featured" class="current">GTA6 追踪 <span class="count">8</span></a>
+        <a href="/#featured">荒野大镖客2 <span class="count">6</span></a>
+        <a href="/#updates">线上模式更新 <span class="count">5</span></a>
+        <a href="/#updates">R星招聘动向 <span class="count">3</span></a>
+        <a href="/#deep-dive">MOD 与破解 <span class="count">4</span></a>
+        <a href="/#comments">玩家社区热帖 <span class="count">12</span></a>
+        <a href="/#news">版本补丁记录 <span class="count">7</span></a>
+        <a href="/#guide">入坑与选购 <span class="count">4</span></a>
+      </nav>
+    </aside>
+
+    <!-- 主内容 -->
+    <main class="main-col">
+
+      <!-- 1. 领域概览 -->
+      <section class="section" id="overview">
+        <div class="section-head">
+          <h2>开放世界游戏动态与社区讨论</h2>
+        </div>
+        <div class="overview-text">
+          <p>围绕 Rockstar Games 的讨论在 2026 年秋季主要集中在三条线：<strong>GTA6 的开发进度与地图传闻</strong>、<strong>荒野大镖客2 线上模式的万圣节活动</strong>，以及<strong>R星北方工作室的招聘岗位变化</strong>。11 月 5 日，R星招聘页面新增“载具物理程序师”与“开放世界事件设计师”两个岗位，地点在爱丁堡，被玩家社区解读为 GTA6 载具手感调整的信号。</p>
+          <p>社区层面，Reddit 的 r/GTA6 板块在 11 月 6 日出现一段 23 秒的夜间驾驶泄漏片段，发帖者称来自“2025 年内部构建版本”。该帖在 12 小时内获得 2.3k 回复，但 MOD 团队随后标注“无法核实来源”。B 站 UP 主“洛圣都交通委”在同日发布逐帧分析视频，指出片段中车灯反射逻辑与 2025 年预告片第 2 分 14 秒的路面反光一致。相关讨论仍在进行。</p>
+          <p>消费侧，荒野大镖客2 线上模式在 11 月 7 日上线“万圣节通行证2”最后一周奖励，包含限定马匹面具与 3 倍 RDO 游戏币任务。GTA 三部曲最终版移动端则推送 1.4.2 补丁，修复了雨天场景帧率骤降的问题。这些具体条目构成了本周玩家实际可感知的内容更新。</p>
+        </div>
+      </section>
+
+      <!-- 2. 精选内容推荐 -->
+      <section class="section" id="featured">
+        <div class="section-head">
+          <h2>本周精选条目</h2>
+          <a href="/#updates" class="more">更多动态 →</a>
+        </div>
+        <div class="card-grid">
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/gta6leak23/400/300" alt="GTA6 夜间驾驶泄漏片段截图，画面可见车灯与湿地面反光" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">泄漏分析</span>
+              <h3 class="card-title">GTA6 夜间驾驶片段 23 秒逐帧拆解</h3>
+              <p class="card-desc">11 月 6 日 Reddit 流出的片段中，车灯在湿地面形成三层反射。B 站 UP 主“洛圣都交通委”对比 2025 年预告片后指出，反射层数与预告片一致，但轮胎溅水粒子密度低了约 30%。</p>
+              <div class="card-tags"><span>GTA6</span><span>载具物理</span><span>社区拆包</span></div>
+              <div class="card-meta"><span class="hot">热度 2.3k 回复</span><span>11月6日</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/rdr2halloween/400/300" alt="荒野大镖客2 线上模式万圣节活动界面，展示限定马匹面具" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">线上活动</span>
+              <h3 class="card-title">荒野大镖客2 万圣节通行证2 最后一周</h3>
+              <p class="card-desc">11 月 7 日至 11 月 14 日，完成“恐惧之夜”系列任务可获限定马匹面具“夜骐”与 3 倍 RDO 游戏币。社区反馈任务匹配时间在晚间高峰超过 4 分钟。</p>
+              <div class="card-tags"><span>荒野大镖客2</span><span>线上模式</span><span>限定奖励</span></div>
+              <div class="card-meta"><span class="hot">参与 1.8 万</span><span>11月7日</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/rockstarjob26/400/300" alt="R星北方工作室招聘页面截图，显示载具物理程序师岗位" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">招聘动向</span>
+              <h3 class="card-title">R星北方新增“载具物理程序师”岗位</h3>
+              <p class="card-desc">11 月 5 日挂出的岗位要求“5 年以上车辆动力学经验，熟悉轮胎模型与悬挂仿真”。对比 2025 年 8 月的同类招聘，本次描述新增了“湿滑路面与动态天气响应”一项。</p>
+              <div class="card-tags"><span>R星</span><span>招聘</span><span>GTA6</span></div>
+              <div class="card-meta"><span class="hot">讨论 460 条</span><span>11月5日</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/gtapatch142/400/300" alt="GTA 三部曲最终版移动端更新界面，显示1.4.2补丁说明" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">补丁记录</span>
+              <h3 class="card-title">GTA 三部曲最终版 1.4.2 移动端修复雨天卡顿</h3>
+              <p class="card-desc">11 月 4 日推送的 1.4.2 补丁针对 iOS 与 Android 版本，修复了雨天场景帧率从 60 帧降至 28 帧的问题。Reddit 用户实测 iPhone 15 Pro 在圣安地列斯雨天市区恢复至 52—58 帧。</p>
+              <div class="card-tags"><span>GTA三部曲</span><span>移动端</span><span>性能补丁</span></div>
+              <div class="card-meta"><span class="hot">实测 87 条</span><span>11月4日</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/rdr2modconflict/400/300" alt="荒野大镖客2 MOD管理器界面，显示两个模组冲突提示" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">MOD 争议</span>
+              <h3 class="card-title">“西部生活”MOD 与 11 月更新冲突</h3>
+              <p class="card-desc">11 月 3 日，Nexus Mods 用户“DutchPlan2”反馈“西部生活”模组在安装 11 月线上更新后导致营地 NPC 消失。作者在 24 小时内发布 2.1 版热修复，但评论区仍有 37 条报告任务触发失败。</p>
+              <div class="card-tags"><span>荒野大镖客2</span><span>MOD</span><span>兼容性</span></div>
+              <div class="card-meta"><span class="hot">下载 4.2 万</span><span>11月3日</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <img class="card-img" src="https://picsum.photos/seed/gta6maprumor/400/300" alt="玩家自制GTA6地图推测图，标注了三个疑似城市区域" width="400" height="300" loading="lazy">
+            <div class="card-body">
+              <span class="card-type">地图传闻</span>
+              <h3 class="card-title">GTA6 地图推测：三个城市区域与中间湿地</h3>
+              <p class="card-desc">11 月 2 日，GTA 论坛用户“ViceCitySource”汇总了 2025 年至今的 14 条招聘信息与 6 段泄漏片段，推测地图包含三块城市区域与中间湿地。该帖被转载至贴吧后，跟帖质疑“湿地占比过高”。</p>
+              <div class="card-tags"><span>GTA6</span><span>地图</span><span>传闻汇总</span></div>
+              <div class="card-meta"><span class="hot">转发 1.1k</span><span>11月2日</span></div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 3. 最新更新 / 动态 -->
+      <section class="section" id="updates">
+        <div class="section-head">
+          <h2>11 月 8 日前后条目动态</h2>
+        </div>
+        <div class="update-list">
+          <div class="update-item">
+            <span class="update-date">11月8日</span>
+            <span class="update-name">GTA6 社区“载具手感”讨论升温 <span>Reddit 单日新增 11 个分析帖，其中 3 个聚焦轮胎打滑音效</span></span>
+            <span class="update-tag">社区</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月7日</span>
+            <span class="update-name">荒野大镖客2 线上模式“恐惧之夜”任务匹配 <span>晚间 9 点服务器排队 4 分 20 秒，R星支持页建议切换战局</span></span>
+            <span class="update-tag">线上</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月7日</span>
+            <span class="update-name">GTA 三部曲最终版 1.4.2 补丁实测 <span>iPhone 15 Pro 雨天市区帧率恢复至 52—58 帧，Android 端仍有闪退报告</span></span>
+            <span class="update-tag">补丁</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月6日</span>
+            <span class="update-name">23 秒夜间驾驶片段流出 <span>发帖者“u/ViceLeaks”称来自 2025 年构建，MOD 团队标注“无法核实”</span></span>
+            <span class="update-tag">泄漏</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月6日</span>
+            <span class="update-name">B 站 UP 主“洛圣都交通委”发布逐帧分析 <span>视频时长 14 分 22 秒，对比预告片第 2 分 14 秒路面反光</span></span>
+            <span class="update-tag">视频</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月5日</span>
+            <span class="update-name">R星北方新增两个岗位 <span>“载具物理程序师”与“开放世界事件设计师”，工作地点爱丁堡</span></span>
+            <span class="update-tag">招聘</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月4日</span>
+            <span class="update-name">“西部生活”MOD 发布 2.1 热修复 <span>作者“DutchPlan2”称修复营地 NPC 消失，但任务触发失败仍有 37 条报告</span></span>
+            <span class="update-tag">MOD</span>
+          </div>
+          <div class="update-item">
+            <span class="update-date">11月3日</span>
+            <span class="update-name">GTA 论坛地图推测帖被转载至贴吧 <span>原帖汇总 14 条招聘信息与 6 段泄漏片段，跟帖质疑湿地占比</span></span>
+            <span class="update-tag">传闻</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4. 分类入口 -->
+      <section class="section" id="categories">
+        <div class="section-head">
+          <h2>按内容类型浏览</h2>
+        </div>
+        <div class="cat-grid">
+          <a href="/#featured" class="cat-item"><span class="cat-name">GTA6 泄漏与拆包</span><span class="cat-desc">片段分析、地图推测、代码挖掘</span></a>
+          <a href="/#updates" class="cat-item"><span class="cat-name">荒野大镖客2 线上活动</span><span class="cat-desc">通行证、限定奖励、任务轮换</span></a>
+          <a href="/#updates" class="cat-item"><span class="cat-name">R星招聘与工作室动向</span><span class="cat-desc">岗位变化、地点、技术要求</span></a>
+          <a href="/#deep-dive" class="cat-item"><span class="cat-name">MOD 兼容与冲突</span><span class="cat-desc">热修复、崩溃反馈、作者回应</span></a>
+          <a href="/#news" class="cat-item"><span class="cat-name">版本补丁记录</span><span class="cat-desc">帧率、闪退、平台差异</span></a>
+          <a href="/#comments" class="cat-item"><span class="cat-name">玩家社区热帖</span><span class="cat-desc">Reddit、贴吧、B站评论区</span></a>
+          <a href="/#guide" class="cat-item"><span class="cat-name">入坑与选购</span><span class="cat-desc">平台选择、版本差异、配置建议</span></a>
+          <a href="/#timeline" class="cat-item"><span class="cat-name">事件时间线</span><span class="cat-desc">按日期梳理关键节点</span></a>
+        </div>
+      </section>
+
+      <!-- 5. 深度解析 -->
+      <section class="section" id="deep-dive">
+        <div class="section-head">
+          <h2>GTA6 载具物理传闻的拆解与判断</h2>
+        </div>
+        <div class="deep-text">
+          <p>11 月 6 日流出的 23 秒夜间驾驶片段，把“载具手感”推到了讨论中心。判断这段素材的可信度，需要把“画面细节”“招聘信息”“历史预告片”三个来源分开看，而不是笼统地贴一个“真”或“假”的标签。</p>
+
+          <h3>片段本身能核对什么</h3>
+          <p>逐帧看，车灯在湿地面形成三层反射：最亮的核心光斑、向外扩散的模糊光晕、以及路面积水边缘的碎光。B 站 UP 主“洛圣都交通委”在 11 月 6 日的视频中指出，2025 年预告片第 2 分 14 秒的路面反光同样呈现三层结构。区别在于，片段中的轮胎溅水粒子密度低了约 30%，且方向盘转动时轮毂的辐条模糊程度更高。这两处差异可以被解释为“开发中版本降级”，也可以被解释为“录制设备压缩导致”，目前没有第三方能给出唯一结论。</p>
+
+          <h3>招聘信息提供了什么旁证</h3>
+          <p>11 月 5 日 R星北方挂出的“载具物理程序师”岗位，职责描述里有一句“湿滑路面与动态天气响应”。对比 2025 年 8 月同一工作室的类似岗位，当时的描述只写了“轮胎模型与悬挂仿真”，没有提天气响应。这个变化的时间点与片段流出只差一天，但招聘页面更新通常提前数周准备，不能直接当作“片段为真”的证据。更合理的读法是：R星确实在推进载具在复杂天气下的表现，而片段恰好落在这个方向上。</p>
+
+          <h3>社区讨论中的信息分层</h3>
+          <p>Reddit 原帖的 2.3k 回复里，大致可以分出四层：第一层是“已公开事实”，即片段存在、时长 23 秒、发帖者账号注册于 2024 年；第二层是“当事人回应”，发帖者“u/ViceLeaks”在 11 月 6 日晚回复称“来源是 2025 年构建版本，不保证最终效果”；第三层是“媒体转述”，包括游戏媒体在 11 月 7 日的报道，大多引用了 MOD 团队的“无法核实”标注；第四层是“网友推测”，集中在“轮胎音效是否来自真实录音”和“方向盘死区是否过大”两个点上。把四层混在一起读，就容易把推测当成事实。</p>
+
+          <h3>与 2025 年预告片的对比方法</h3>
+          <p>如果想把判断拆成可核对的步骤，可以按下面这个顺序：</p>
+          <ul>
+            <li>先锁定预告片中同一场景的光照条件（夜间、湿路面、城市灯光）。</li>
+            <li>再对比车灯反射的层数与扩散角度，这两项在压缩后仍较稳定。</li>
+            <li>最后看轮胎溅水粒子与方向盘转角，这两项受录制设备与压缩算法影响最大，权重应降低。</li>
+          </ul>
+          <p>按这个顺序，片段中“反射层数”与预告片一致，可信度权重较高；“粒子密度”差异则可能来自压缩，不宜作为否定依据。目前能下的判断是：片段与预告片在光照逻辑上同源，但无法确认其是否为 2026 年的实际构建版本。</p>
+        </div>
+      </section>
+
+      <!-- 6. 体验指南 -->
+      <section class="section" id="guide">
+        <div class="section-head">
+          <h2>怎么跟进这些条目才不浪费时间</h2>
+        </div>
+        <div class="guide-steps">
+          <div class="guide-step">
+            <span class="step-num">1</span>
+            <div><div class="step-title">先看条目有没有“可核对的中段”</div><div class="step-desc">一条泄漏分析如果只写“画面很真实”，没有逐帧对比或时间戳，可以直接跳过。优先读带具体秒数、帧数或招聘要求的帖子。</div></div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">2</span>
+            <div><div class="step-title">把“已公开事实”和“推测”分开记</div><div class="step-desc">比如 11 月 6 日的片段，事实是“存在 23 秒视频”，推测是“来自 2025 年构建”。前者可以引用，后者只能当参考。</div></div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">3</span>
+            <div><div class="step-title">横向对比同类条目</div><div class="step-desc">荒野大镖客2 的 MOD 冲突帖里，作者回复速度（24 小时内热修复）比下载量更能说明维护质量。GTA6 的传闻也一样，看发帖者过往记录比看单帖热度有用。</div></div>
+          </div>
+          <div class="guide-step">
+            <span class="step-num">4</span>
+            <div><div class="step-title">线上活动先查奖励截止日期</div><div class="step-desc">“万圣节通行证2”在 11 月 14 日结束，限定马匹面具“夜骐”需要完成 5 个“恐惧之夜”任务。如果只剩两天，优先做给 3 倍游戏币的任务，而不是刷外观。</div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7. FAQ -->
+      <section class="section" id="faq">
+        <div class="section-head">
+          <h2>玩家常问的六个问题</h2>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>GTA6 的夜间驾驶片段到底是不是真的？</summary>
+            <div class="faq-answer">片段中的车灯反射层数与 2025 年预告片第 2 分 14 秒一致，但轮胎溅水粒子密度低了约 30%。发帖者“u/ViceLeaks”自称来源是 2025 年构建版本，Reddit 的 MOD 团队标注“无法核实来源”。目前没有第三方能确认其是否为 2026 年的实际开发版本。</div>
+          </details>
+          <details class="faq-item">
+            <summary>荒野大镖客2 万圣节通行证2 什么时候结束？</summary>
+            <div class="faq-answer">11 月 14 日结束。限定马匹面具“夜骐”需要完成 5 个“恐惧之夜”系列任务，3 倍 RDO 游戏币奖励持续到同一时间。晚间 9 点任务匹配排队约 4 分 20 秒，建议错峰或切换战局。</div>
+          </details>
+          <details class="faq-item">
+            <summary>“西部生活”MOD 和 11 月线上更新冲突了吗？</summary>
+            <div class="faq-answer">有冲突。11 月 3 日用户“DutchPlan2”反馈安装 11 月线上更新后营地 NPC 消失，作者在 24 小时内发布 2.1 版热修复，但评论区仍有 37 条报告任务触发失败。建议先备份存档，或暂时回退到 10 月版本。</div>
+          </details>
+          <details class="faq-item">
+            <summary>GTA 三部曲最终版 1.4.2 补丁修好了什么？</summary>
+            <div class="faq-answer">主要修复 iOS 与 Android 版本雨天场景帧率骤降的问题。Reddit 用户实测 iPhone 15 Pro 在圣安地列斯雨天市区从 28 帧恢复至 52—58 帧。Android 端仍有闪退报告，集中在骁龙 8 Gen 2 机型。</div>
+          </details>
+          <details class="faq-item">
+            <summary>R星北方新增的“载具物理程序师”岗位意味着什么？</summary>
+            <div class="faq-answer">该岗位要求 5 年以上车辆动力学经验，职责描述新增“湿滑路面与动态天气响应”。对比 2025 年 8 月的类似岗位，当时的描述没有天气响应一项。这个变化与 11 月 6 日的片段流出时间接近，但招聘更新通常提前数周准备，不能直接当作片段为真的证据。</div>
+          </details>
+          <details class="faq-item">
+            <summary>GTA6 地图推测帖里说的“三个城市区域”靠谱吗？</summary>
+            <div class="faq-answer">该推测由 GTA 论坛用户“ViceCitySource”在 11 月 2 日汇总，依据是 2025 年至今的 14 条招聘信息与 6 段泄漏片段。贴吧跟帖主要质疑“湿地占比过高”。目前没有官方信息确认城市数量，招聘信息中的“开放世界事件设计师”岗位也没有提及具体区域。</div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8. 用户评论 -->
+      <section class="section" id="comments">
+        <div class="section-head">
+          <h2>玩家评论区</h2>
+        </div>
+        <div class="comment-grid">
+          <div class="comment-card"><div class="comment-user">洛圣都交通委 <span class="time">11月6日</span></div><div class="comment-text">逐帧看了三遍，车灯反射确实和预告片一个路子，但轮胎溅水粒子少得有点明显。等正式版再下结论。</div></div>
+          <div class="comment-card"><div class="comment-user">西部老牛仔 <span class="time">11月7日</span></div><div class="comment-text">万圣节通行证2 那个马匹面具“夜骐”挺好看，但任务匹配排了四分钟，进去还掉线一次，最后只拿到 2 倍奖励。</div></div>
+          <div class="comment-card"><div class="comment-user">DutchPlan2 <span class="time">11月3日</span></div><div class="comment-text">2.1 热修复已经发了，营地 NPC 消失的问题我这边测试正常。任务触发失败还在查，可能是和另一个天气模组冲突。</div></div>
+          <div class="comment-card"><div class="comment-user">ViceCitySource <span class="time">11月2日</span></div><div class="comment-text">地图推测帖被转到贴吧后，有人说湿地占比太高。其实我原文写的是“中间湿地可能是过渡区”，被截掉了后半句。</div></div>
+          <div class="comment-card"><div class="comment-user">夜班司机老张 <span class="time">11月8日</span></div><div class="comment-text">GTA 三部曲 1.4.2 补丁在 iPhone 15 上确实不卡了，但 Android 平板还是闪退，等下一个补丁吧。</div></div>
+          <div class="comment-card"><div class="comment-user">R星招聘观察 <span class="time">11月5日</span></div><div class="comment-text">载具物理程序师那个岗位，2025 年 8 月也挂过类似的，当时没提天气响应。这次加了一句，方向挺明确。</div></div>
+          <div class="comment-card"><div class="comment-user">吃瓜不吐皮 <span class="time">11月6日</span></div><div class="comment-text">23 秒片段能吵 2.3k 回复，也是服了。不过那个方向盘死区确实看着有点大，不知道是不是录制问题。</div></div>
+          <div class="comment-card"><div class="comment-user">黑水镇邮差 <span class="time">11月4日</span></div><div class="comment-text">荒野线上最近匹配太慢了，晚上九点排四分钟，进去打一半房主退了。奖励倒是还行，3 倍游戏币。</div></div>
+          <div class="comment-card"><div class="comment-user">GTA6还不出 <span class="time">11月7日</span></div><div class="comment-text">我就想知道 2026 年到底能不能玩到，别的都是虚的。招聘岗位倒是加得挺勤。</div></div>
+          <div class="comment-card"><div class="comment-user">MOD搬运工 <span class="time">11月3日</span></div><div class="comment-text">西部生活那个 MOD 更新后我这边也崩了两次，但作者回复挺快，2.1 版好多了。任务失败还没遇到。</div></div>
+          <div class="comment-card"><div class="comment-user">圣安地列斯老玩家 <span class="time">11月4日</span></div><div class="comment-text">三部曲移动端终于修雨天帧率了，之前下雨跟放幻灯片似的。不过 Android 端闪退还是老样子。</div></div>
+          <div class="comment-card"><div class="comment-user">洛圣都气象站 <span class="time">11月8日</span></div><div class="comment-text">湿地面反射那个分析视频做得细，但 30% 粒子密度差异也可能是压缩导致的，别急着下结论。</div></div>
+          <div class="comment-card"><div class="comment-user">西部生活作者 <span class="time">11月3日</span></div><div class="comment-text">热修复已上传，任务触发失败的问题需要大家提供具体任务名和天气设置，我这边复现不了。</div></div>
+          <div class="comment-card"><div class="comment-user">半夜刷R星 <span class="time">11月7日</span></div><div class="comment-text">万圣节通行证2 最后一周了，限定面具要 5 个任务，时间不够的可以先刷 3 倍游戏币，外观不急。</div></div>
+          <div class="comment-card"><div class="comment-user">载具手感研究员 <span class="time">11月6日</span></div><div class="comment-text">片段里轮胎打滑音效听着像真实录音，但游戏里一般不会直接用原声。等官方预告吧。</div></div>
+          <div class="comment-card"><div class="comment-user">吃瓜路人甲 <span class="time">11月8日</span></div><div class="comment-text">招聘信息那条挺有意思，湿滑路面与动态天气响应，感觉 GTA6 的雨天驾驶会有说法。</div></div>
+        </div>
+      </section>
+
+      <!-- 9. 相关资讯 -->
+      <section class="section" id="news">
+        <div class="section-head">
+          <h2>近期资讯速览</h2>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <h3>Reddit r/GTA6 板块 11 月 6 日单日新增 11 个载具分析帖</h3>
+            <div class="meta">2026-11-07 · 来源：r/GTA6 版块统计</div>
+            <p>其中 3 个帖子聚焦轮胎打滑音效，发帖者“u/TireSqueal”称片段中的高频部分与 2025 年预告片完全一致，但低频部分被压缩削薄。该帖获得 870 赞。</p>
+          </article>
+          <article class="news-item">
+            <h3>荒野大镖客2 线上模式“恐惧之夜”任务匹配超 4 分钟</h3>
+            <div class="meta">2026-11-07 · 来源：R星支持页面更新</div>
+            <p>R星支持页在 11 月 7 日晚间添加提示，建议玩家在遇到匹配延迟时切换到“自由战局”再重新进入。同一时段，Reddit 用户“u/RDR2Night”记录了三次匹配失败。</p>
+          </article>
+          <article class="news-item">
+            <h3>R星北方工作室招聘页面 11 月 5 日更新两个岗位</h3>
+            <div class="meta">2026-11-05 · 来源：R星官方招聘页</div>
+            <p>新增“载具物理程序师”与“开放世界事件设计师”，工作地点爱丁堡。前者要求 5 年以上车辆动力学经验，职责描述包含“湿滑路面与动态天气响应”。</p>
+          </article>
+          <article class="news-item">
+            <h3>GTA 三部曲最终版 1.4.2 补丁 iPhone 15 Pro 实测帧率恢复</h3>
+            <div class="meta">2026-11-04 · 来源：Reddit r/GTATrilogy 用户实测</div>
+            <p>用户“u/MobileClaude”在 11 月 4 日发布测试视频，圣安地列斯雨天市区帧率从 28 帧回升至 52—58 帧。Android 端骁龙 8 Gen 2 机型仍有闪退报告，集中在进入洛圣都机场时。</p>
+          </article>
+          <article class="news-item">
+            <h3>“西部生活”MOD 作者 24 小时内发布 2.1 热修复</h3>
+            <div class="meta">2026-11-03 · 来源：Nexus Mods 页面更新</div>
+            <p>作者“DutchPlan2”在 11 月 3 日更新说明中写道，2.1 版修复了营地 NPC 消失问题，但任务触发失败需要玩家提供任务名与天气设置。评论区新增 37 条相关报告。</p>
+          </article>
+          <article class="news-item">
+            <h3>GTA 论坛地图推测帖被转载至贴吧后引发湿地占比讨论</h3>
+            <div class="meta">2026-11-02 · 来源：GTA 论坛 / 贴吧转载</div>
+            <p>原帖作者“ViceCitySource”在 11 月 2 日汇总了 14 条招聘信息与 6 段泄漏片段，贴吧跟帖主要质疑“中间湿地占比过高”。作者在 11 月 3 日补充说明“湿地是过渡区，不是主城”。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10. 相关推荐 -->
+      <section class="section" id="recommend">
+        <div class="section-head">
+          <h2>相关条目与方向</h2>
+        </div>
+        <div class="tag-cloud">
+          <a href="/#featured">GTA6 夜间驾驶 23 秒</a>
+          <a href="/#featured">荒野大镖客2 夜骐面具</a>
+          <a href="/#updates">载具物理程序师招聘</a>
+          <a href="/#deep-dive">轮胎溅水粒子对比</a>
+          <a href="/#news">GTA 三部曲 1.4.2 补丁</a>
+          <a href="/#comments">西部生活 MOD 2.1</a>
+          <a href="/#updates">恐惧之夜任务匹配</a>
+          <a href="/#timeline">2025 预告片第 2 分 14 秒</a>
+        </div>
+      </section>
+
+      <!-- 11. 补充：时间线 -->
+      <section class="section" id="timeline">
+        <div class="section-head">
+          <h2>10 月 30 日至 11 月 8 日条目时间线</h2>
+        </div>
+        <div class="timeline">
+          <div class="tl-item"><div class="tl-date">11月8日</div><div class="tl-text">Reddit 载具手感讨论单日新增 11 个分析帖，B 站相关视频播放量累计 8.7 万。</div></div>
+          <div class="tl-item"><div class="tl-date">11月7日</div><div class="tl-text">荒野大镖客2 万圣节通行证2 进入最后一周；GTA 三部曲 1.4.2 补丁实测数据发布。</div></div>
+          <div class="tl-item"><div class="tl-date">11月6日</div><div class="tl-text">23 秒夜间驾驶片段流出，r/GTA6 版块 12 小时内回复 2.3k。</div></div>
+          <div class="tl-item"><div class="tl-date">11月5日</div><div class="tl-text">R星北方招聘页面新增“载具物理程序师”与“开放世界事件设计师”。</div></div>
+          <div class="tl-item"><div class="tl-date">11月4日</div><div class="tl-text">GTA 三部曲最终版移动端推送 1.4.2 补丁。</div></div>
+          <div class="tl-item"><div class="tl-date">11月3日</div><div class="tl-text">“西部生活”MOD 发布 2.1 热修复。</div></div>
+          <div class="tl-item"><div class="tl-date">11月2日</div><div class="tl-text">GTA 论坛地图推测帖发布，汇总 14 条招聘信息与 6 段泄漏片段。</div></div>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右侧辅助栏 -->
+    <aside class="side-col" aria-label="辅助信息">
+      <div class="side-panel">
+        <h3><span class="dot"></span> 今日热帖</h3>
+        <div class="side-list">
+          <a href="/#featured"><span class="num">1</span> GTA6 夜间驾驶片段逐帧拆解</a>
+          <a href="/#featured"><span class="num">2</span> 荒野大镖客2 夜骐面具获取攻略</a>
+          <a href="/#updates"><span class="num">3</span> 载具物理程序师岗位要求变化</a>
+          <a href="/#deep-dive"><span class="num">4</span> 轮胎溅水粒子 30% 差异来源</a>
+          <a href="/#comments"><span class="num">5</span> 恐惧之夜任务匹配 4 分钟实录</a>
+        </div>
+      </div>
+      <div class="side-panel">
+        <h3><span class="dot"></span> 条目速览</h3>
+        <div class="side-stat">
+          <div class="side-stat-row"><span>今日更新条目</span><b>17 条</b></div>
+          <div class="side-stat-row"><span>GTA6 相关讨论</span><b>8 个</b></div>
+          <div class="side-stat-row"><span>荒野线上活动</span><b>5 个</b></div>
+          <div class="side-stat-row"><span>MOD 与补丁</span><b>4 个</b></div>
+        </div>
+      </div>
+      <div class="side-panel">
+        <h3><span class="dot"></span> 投稿与互动</h3>
+        <div class="side-list">
+          <a href="/#comments">分享你遇到的 MOD 冲突</a>
+          <a href="/#comments">上传夜间驾驶片段对比</a>
+          <a href="/#comments">参与载具手感投票</a>
+        </div>
+      </div>
+    </aside>
+
+  </div>
+
+  <!-- 页尾 -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="logo" style="gap:9px;">
+          <span class="logo-mark" style="background:#f2b01e;color:#1b1b2f;">R</span>
+          <span class="logo-text">R星吃瓜最新消息</span>
+        </div>
+        <p>覆盖 2026 年 10 月至 11 月的 GTA6 泄漏分析、荒野大镖客2 线上活动轮换、R星招聘变化与 MOD 兼容记录。条目类型以社区帖、补丁说明和招聘页面为主，更新节奏跟随 Reddit 与 Nexus Mods 的发布周期。</p>
+      </div>
+      <div class="footer-col">
+        <h4>内容方向</h4>
+        <a href="/#featured">GTA6 泄漏与拆包</a>
+        <a href="/#updates">荒野大镖客2 线上活动</a>
+        <a href="/#updates">R星招聘动向</a>
+        <a href="/#deep-dive">MOD 兼容与冲突</a>
+      </div>
+      <div class="footer-col">
+        <h4>互动入口</h4>
+        <a href="/#comments">玩家评论区</a>
+        <a href="/#comments">投稿与反馈</a>
+        <a href="/#timeline">事件时间线</a>
+        <a href="/#faq">常见问题</a>
+      </div>
+      <div class="footer-col">
+        <h4>条目说明</h4>
+        <a href="/#news">资讯来源与日期</a>
+        <a href="/#guide">体验指南</a>
+        <a href="/#recommend">相关推荐</a>
+        <a href="/#overview">领域概览</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 R星吃瓜最新消息 · 内容为社区动态聚合，事实性表述以原始来源为准</span>
+      <span>最后汇总：2026 年 11 月 8 日</span>
+    </div>
+  </footer>
+
+  <!-- 回到顶部 -->
+  <button class="back-top" id="backTop" aria-label="回到顶部">↑</button>
+
+  <!-- 移动端抽屉 -->
+  <div class="mobile-nav" id="mobileNav">
+    <div class="mobile-nav-mask" id="mobileMask"></div>
+    <div class="mobile-nav-panel">
+      <button class="mobile-close" id="mobileClose" aria-label="关闭菜单">✕</button>
+      <h3>频道导航</h3>
+      <a href="/#hero">首屏</a>
+      <a href="/#overview">领域概览</a>
+      <a href="/#featured">精选推荐</a>
+      <a href="/#updates">最新动态</a>
+      <a href="/#categories">分类入口</a>
+      <a href="/#deep-dive">深度解析</a>
+      <a href="/#guide">体验指南</a>
+      <a href="/#faq">常见问题</a>
+      <a href="/#comments">玩家评论</a>
+      <a href="/#news">相关资讯</a>
+      <a href="/#recommend">相关推荐</a>
+      <a href="/#timeline">时间线</a>
+    </div>
+  </div>
+
+  <script>
+    (function() {
+      // 回到顶部
+      const backTop = document.getElementById('backTop');
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 600) {
+          backTop.classList.add('show');
+        } else {
+          backTop.classList.remove('show');
+        }
+        // 频道高亮
+        const sections = document.querySelectorAll('main .section[id]');
+        const navLinks = document.querySelectorAll('.main-nav a');
+        let currentId = '';
+        sections.forEach(function(sec) {
+          const rect = sec.getBoundingClientRect();
+          if (rect.top <= 160) {
+            currentId = sec.id;
+          }
+        });
+        if (currentId) {
+          navLinks.forEach(function(link) {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === '/#' + currentId) {
+              link.classList.add('active');
+            }
+          });
+        }
+      });
+      backTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // 移动端抽屉
+      const hamburger = document.getElementById('hamburgerBtn');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileMask = document.getElementById('mobileMask');
+      const mobileClose = document.getElementById('mobileClose');
+
+      function openDrawer() {
+        mobileNav.classList.add('open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
+      }
+      function closeDrawer() {
+        mobileNav.classList.remove('open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openDrawer);
+      mobileMask.addEventListener('click', closeDrawer);
+      mobileClose.addEventListener('click', closeDrawer);
+      mobileNav.querySelectorAll('a').forEach(function(link) {
+        link.addEventListener('click', closeDrawer);
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+          closeDrawer();
+        }
+      });
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "R星吃瓜最新消息",
+    "description": "聚合GTA6、荒野大镖客2、R星招聘与MOD争议等具体条目，提供玩家实测、社区讨论与版本补丁记录。",
+    "inLanguage": "zh-CN"
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "GTA6 的夜间驾驶片段到底是不是真的？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "片段中的车灯反射层数与 2025 年预告片第 2 分 14 秒一致，但轮胎溅水粒子密度低了约 30%。发帖者“u/ViceLeaks”自称来源是 2025 年构建版本，Reddit 的 MOD 团队标注“无法核实来源”。目前没有第三方能确认其是否为 2026 年的实际开发版本。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "荒野大镖客2 万圣节通行证2 什么时候结束？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "11 月 14 日结束。限定马匹面具“夜骐”需要完成 5 个“恐惧之夜”系列任务，3 倍 RDO 游戏币奖励持续到同一时间。晚间 9 点任务匹配排队约 4 分 20 秒，建议错峰或切换战局。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "“西部生活”MOD 和 11 月线上更新冲突了吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "有冲突。11 月 3 日用户“DutchPlan2”反馈安装 11 月线上更新后营地 NPC 消失，作者在 24 小时内发布 2.1 版热修复，但评论区仍有 37 条报告任务触发失败。建议先备份存档，或暂时回退到 10 月版本。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "GTA 三部曲最终版 1.4.2 补丁修好了什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "主要修复 iOS 与 Android 版本雨天场景帧率骤降的问题。Reddit 用户实测 iPhone 15 Pro 在圣安地列斯雨天市区从 28 帧恢复至 52—58 帧。Android 端仍有闪退报告，集中在骁龙 8 Gen 2 机型。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "R星北方新增的“载具物理程序师”岗位意味着什么？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "该岗位要求 5 年以上车辆动力学经验，职责描述新增“湿滑路面与动态天气响应”。对比 2025 年 8 月的类似岗位，当时的描述没有天气响应一项。这个变化与 11 月 6 日的片段流出时间接近，但招聘更新通常提前数周准备，不能直接当作片段为真的证据。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "GTA6 地图推测帖里说的“三个城市区域”靠谱吗？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "该推测由 GTA 论坛用户“ViceCitySource”在 11 月 2 日汇总，依据是 2025 年至今的 14 条招聘信息与 6 段泄漏片段。贴吧跟帖主要质疑“湿地占比过高”。目前没有官方信息确认城市数量，招聘信息中的“开放世界事件设计师”岗位也没有提及具体区域。"
+        }
+      }
+    ]
+  }
+  </script>
+
+</body>
+                                      </html>
