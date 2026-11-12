@@ -1,0 +1,1191 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>大乔未久步兵番号 - 番号索引与作品资料库</title>
+<meta name="description" content="大乔未久步兵番号按番号、发行日期与作品类型整理，收录单体作品、共演合集、出道作与近期新作条目，附类型差异说明、观看顺序建议、常见问答和观众评价，供检索番号与了解作品信息时参考。">
+<meta name="keywords" content="大乔未久步兵番号">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%232f1d3a'/%3E%3Cpath d='M18 44V20h8l6 12 6-12h8v24h-7V31l-5 9h-4l-5-9v13z' fill='%23f0c26d'/%3E%3C/svg%3E">
+<style>
+:root{
+  --brand:#2f1d3a;
+  --brand-light:#4b2f5c;
+  --brand-deep:#1d1126;
+  --accent:#c8892f;
+  --accent-soft:#f0c26d;
+  --bg:#f6f3f7;
+  --panel:#ffffff;
+  --panel-alt:#f1ecf4;
+  --text:#221a29;
+  --text-2:#544a60;
+  --text-3:#8a7f96;
+  --line:#e2dae8;
+  --line-strong:#cdc1d6;
+  --radius-card:12px;
+  --radius-btn:8px;
+  --radius-tag:4px;
+  --radius-banner:16px;
+  --shadow:0 1px 3px rgba(31,17,38,.07),0 6px 16px rgba(31,17,38,.05);
+  --shadow-hover:0 3px 8px rgba(31,17,38,.10),0 14px 28px rgba(31,17,38,.10);
+  --sticky-h:104px;
+  --maxw:1360px;
+  --font:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--sticky-h) + 16px)}
+body{
+  margin:0;font-family:var(--font);background:var(--bg);color:var(--text);
+  font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;line-height:1.35;color:var(--text)}
+p{margin:0 0 .85em}
+a{color:var(--brand-light);text-decoration:none}
+a:hover{color:var(--accent)}
+ul,ol{margin:0;padding:0;list-style:none}
+img{display:block;max-width:100%}
+button{font-family:inherit}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+
+/* ---------- 吸顶公告条 + 页头 ---------- */
+.sticky-wrap{position:sticky;top:0;z-index:60}
+.notice-bar{
+  background:var(--brand-deep);color:#e8dced;font-size:13px;
+  display:flex;align-items:center;gap:14px;padding:7px 20px;
+  overflow:hidden;
+}
+.notice-bar .nb-brand{
+  font-weight:700;color:var(--accent-soft);white-space:nowrap;letter-spacing:.5px;
+  border-right:1px solid rgba(240,194,109,.35);padding-right:12px;flex:none;
+}
+.notice-track{display:flex;gap:34px;flex-wrap:nowrap;overflow-x:auto;scrollbar-width:none}
+.notice-track::-webkit-scrollbar{display:none}
+.notice-item{white-space:nowrap;color:#d7c9de}
+.notice-item b{color:#fff;font-weight:600}
+.notice-item .dot{display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);margin-right:8px;vertical-align:2px}
+
+.site-header{
+  background:rgba(255,255,255,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.header-inner{
+  max-width:var(--maxw);margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:22px;
+}
+.logo{display:flex;align-items:center;gap:10px;flex:none}
+.logo svg{width:36px;height:36px;flex:none}
+.logo-text{font-size:19px;font-weight:800;color:var(--brand);letter-spacing:.4px;white-space:nowrap}
+.main-nav{display:flex;gap:4px;flex-wrap:wrap;flex:1}
+.main-nav a{
+  font-size:14px;color:var(--text-2);padding:6px 11px;border-radius:var(--radius-btn);
+  transition:background .18s,color .18s;white-space:nowrap;
+}
+.main-nav a:hover,.main-nav a.active{background:var(--panel-alt);color:var(--brand);font-weight:600}
+.header-tools{display:flex;align-items:center;gap:10px;flex:none}
+.search-box{position:relative}
+.search-box input{
+  width:180px;padding:7px 12px 7px 30px;border:1px solid var(--line-strong);
+  border-radius:20px;font-size:13px;background:#fbf9fc;color:var(--text);
+  transition:width .2s,border-color .2s;
+}
+.search-box input:focus{width:220px;border-color:var(--accent);outline:none;background:#fff}
+.search-box::before{
+  content:"";position:absolute;left:11px;top:50%;width:11px;height:11px;margin-top:-7px;
+  border:2px solid var(--text-3);border-radius:50%;
+}
+.search-box::after{
+  content:"";position:absolute;left:20px;top:50%;width:5px;height:2px;margin-top:5px;
+  background:var(--text-3);transform:rotate(45deg);border-radius:1px;
+}
+.btn-ghost{
+  border:1px solid var(--line-strong);background:#fff;color:var(--brand);
+  font-size:13px;padding:7px 14px;border-radius:20px;cursor:pointer;transition:.18s;
+}
+.btn-ghost:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.hamburger{display:none;background:none;border:1px solid var(--line-strong);border-radius:8px;
+  width:38px;height:36px;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:4px;padding:0}
+.hamburger span{display:block;width:18px;height:2px;background:var(--brand);border-radius:1px}
+
+/* ---------- 首屏 ---------- */
+.hero{
+  position:relative;overflow:hidden;background:
+    radial-gradient(1100px 460px at 88% -12%,rgba(200,137,47,.20),transparent 62%),
+    linear-gradient(150deg,#2f1d3a 0%,#432b52 46%,#251530 100%);
+  color:#f4ecf7;
+}
+.hero-inner{
+  max-width:var(--maxw);margin:0 auto;padding:52px 20px 56px;
+  display:grid;grid-template-columns:1.25fr .95fr;gap:44px;align-items:center;position:relative;z-index:2;
+}
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;font-size:12.5px;letter-spacing:1px;
+  color:var(--accent-soft);border:1px solid rgba(240,194,109,.45);
+  padding:4px 12px;border-radius:20px;margin-bottom:18px;
+}
+.hero h1{
+  font-size:clamp(30px,4.4vw,50px);font-weight:800;color:#fff;letter-spacing:1px;
+  line-height:1.2;margin-bottom:18px;
+}
+.hero-desc{font-size:15.5px;line-height:1.85;color:#dccfe4;max-width:560px;margin-bottom:26px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:26px}
+.hero-actions .primary{
+  background:var(--accent);color:#231526;font-weight:700;padding:11px 24px;
+  border-radius:var(--radius-btn);font-size:14.5px;border:none;cursor:pointer;transition:.2s;
+}
+.hero-actions .primary:hover{background:var(--accent-soft);transform:translateY(-2px)}
+.hero-actions .secondary{
+  background:rgba(255,255,255,.08);color:#f4ecf7;padding:11px 22px;border-radius:var(--radius-btn);
+  border:1px solid rgba(255,255,255,.3);font-size:14.5px;transition:.2s;
+}
+.hero-actions .secondary:hover{background:rgba(255,255,255,.16);color:#fff}
+.hero-stats{display:flex;gap:30px;flex-wrap:wrap}
+.hero-stats div strong{display:block;font-size:24px;color:var(--accent-soft);font-weight:800;line-height:1.2}
+.hero-stats div span{font-size:12.5px;color:#bda9c9;letter-spacing:.5px}
+
+.hero-visual{position:relative;height:320px}
+.hv-card{
+  position:absolute;border-radius:14px;background:rgba(255,255,255,.09);
+  border:1px solid rgba(255,255,255,.18);backdrop-filter:blur(4px);padding:14px 16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.28);color:#f0e6f5;
+}
+.hv-card .code{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:var(--accent-soft);letter-spacing:.5px}
+.hv-card .name{font-size:14.5px;font-weight:700;margin:4px 0 2px;color:#fff}
+.hv-card .meta{font-size:11.5px;color:#c3b0cf}
+.hv-1{top:6px;left:0;width:238px;animation:floatY 7s ease-in-out infinite}
+.hv-2{top:110px;right:0;width:222px;animation:floatY 8.5s ease-in-out infinite .6s}
+.hv-3{bottom:0;left:52px;width:250px;animation:floatY 9.5s ease-in-out infinite 1.2s}
+.hv-3 .bar{height:6px;border-radius:3px;background:rgba(255,255,255,.18);margin-top:9px;overflow:hidden}
+.hv-3 .bar i{display:block;height:100%;width:76%;background:var(--accent);border-radius:3px}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+.hero-rings{position:absolute;right:-140px;top:-120px;width:520px;height:520px;z-index:1;opacity:.5;pointer-events:none}
+
+/* ---------- 通用容器 ---------- */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 20px}
+.layout{display:grid;grid-template-columns:206px minmax(0,1fr) 268px;gap:28px;padding:38px 0 10px;align-items:start}
+
+/* ---------- 频道栏 ---------- */
+.channel-col{position:sticky;top:calc(var(--sticky-h) + 18px);max-height:calc(100vh - var(--sticky-h) - 40px);overflow-y:auto;scrollbar-width:thin}
+.channel-title{font-size:12px;letter-spacing:2px;color:var(--text-3);margin:0 0 10px 10px;font-weight:700}
+.channel-list li a{
+  display:flex;justify-content:space-between;align-items:center;gap:6px;
+  padding:8px 12px;border-radius:var(--radius-btn);font-size:13.8px;color:var(--text-2);
+  border-left:2px solid transparent;transition:.16s;
+}
+.channel-list li a:hover{background:var(--panel);color:var(--brand);border-left-color:var(--accent)}
+.channel-list li a.active{background:var(--panel);color:var(--brand);font-weight:700;border-left-color:var(--accent);box-shadow:var(--shadow)}
+.channel-list li a em{font-style:normal;font-size:11.5px;color:var(--text-3)}
+.channel-note{
+  margin-top:18px;background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px;font-size:12.5px;color:var(--text-2);line-height:1.7;box-shadow:var(--shadow);
+}
+.channel-note strong{display:block;color:var(--brand);margin-bottom:6px;font-size:13px}
+
+/* ---------- 主栏 ---------- */
+section.block{margin-bottom:44px;scroll-margin-top:calc(var(--sticky-h) + 16px)}
+.block-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px}
+.block-head h2{font-size:21px;font-weight:800;letter-spacing:.3px;position:relative;padding-left:13px}
+.block-head h2::before{
+  content:"";position:absolute;left:0;top:5px;bottom:5px;width:4px;border-radius:2px;
+  background:linear-gradient(180deg,var(--accent),var(--brand-light));
+}
+.block-head .sub{font-size:12.5px;color:var(--text-3);flex:none;padding-bottom:3px}
+.lead{color:var(--text-2);font-size:14.5px;line-height:1.9}
+
+/* 概览 */
+.overview-panel{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-banner);
+  padding:24px 26px;box-shadow:var(--shadow);
+}
+.overview-panel p{font-size:14.6px;line-height:1.95;color:var(--text-2)}
+.overview-panel p:last-child{margin-bottom:0}
+.overview-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px;padding-top:16px;border-top:1px dashed var(--line-strong)}
+.overview-tags span{
+  font-size:12.5px;background:var(--panel-alt);color:var(--brand-light);
+  padding:4px 11px;border-radius:20px;border:1px solid var(--line);
+}
+
+/* 精选卡片 */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(232px,1fr));gap:18px}
+.card{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  overflow:hidden;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s;
+  display:flex;flex-direction:column;
+}
+.card:hover{transform:translateY(-3px);box-shadow:var(--shadow-hover)}
+.card .thumb{position:relative;aspect-ratio:4/3;overflow:hidden;background:var(--panel-alt)}
+.card .thumb img{width:100%;height:100%;object-fit:cover;transition:transform .3s}
+.card:hover .thumb img{transform:scale(1.04)}
+.card .type-tag{
+  position:absolute;left:9px;top:9px;background:rgba(29,17,38,.82);color:var(--accent-soft);
+  font-size:11px;padding:2px 9px;border-radius:var(--radius-tag);letter-spacing:.5px;
+}
+.card-body{padding:13px 15px 15px;display:flex;flex-direction:column;gap:8px;flex:1}
+.card-body h3{font-size:15.5px;font-weight:700;line-height:1.45}
+.card-body h3 a{color:var(--text)}
+.card-body h3 a:hover{color:var(--accent)}
+.card-desc{font-size:13px;line-height:1.72;color:var(--text-2);flex:1}
+.tag-row{display:flex;flex-wrap:wrap;gap:5px}
+.tag-row span{font-size:11.5px;color:var(--brand-light);background:var(--panel-alt);padding:2px 8px;border-radius:var(--radius-tag)}
+.card-meta{display:flex;justify-content:space-between;font-size:11.5px;color:var(--text-3);border-top:1px dashed var(--line);padding-top:8px}
+.card-meta b{color:var(--accent);font-weight:700}
+
+/* 最新更新列表 */
+.update-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden}
+.update-item{display:flex;gap:14px;padding:13px 18px;border-bottom:1px solid var(--line);align-items:flex-start;transition:background .16s}
+.update-item:last-child{border-bottom:none}
+.update-item:hover{background:var(--panel-alt)}
+.update-date{flex:none;width:62px;font-size:12px;color:var(--text-3);font-family:ui-monospace,Menlo,monospace;padding-top:2px}
+.update-main{min-width:0}
+.update-main .u-name{font-size:14.4px;font-weight:700;color:var(--text);margin-bottom:2px}
+.update-main .u-name .code{font-family:ui-monospace,Menlo,monospace;color:var(--accent);font-size:12.5px;margin-left:6px;font-weight:600}
+.update-main .u-sum{font-size:13px;color:var(--text-2);line-height:1.65}
+
+/* 分类入口 */
+.cat-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+.cat-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:14px 15px;box-shadow:var(--shadow);transition:.2s;display:block;position:relative;
+}
+.cat-item:hover{transform:translateY(-2px);box-shadow:var(--shadow-hover);border-color:var(--line-strong)}
+.cat-item strong{display:block;font-size:14.5px;color:var(--brand);margin-bottom:4px}
+.cat-item span{font-size:12px;color:var(--text-3);line-height:1.55;display:block}
+.cat-item em{position:absolute;right:12px;top:13px;font-style:normal;font-size:11.5px;color:var(--accent);font-weight:700}
+
+/* 深度解析 */
+.deep{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-banner);padding:26px 28px;box-shadow:var(--shadow)}
+.deep h3{font-size:16.5px;font-weight:800;margin:26px 0 10px;color:var(--brand);padding-left:11px;border-left:3px solid var(--accent-soft)}
+.deep h3:first-of-type{margin-top:6px}
+.deep p{font-size:14.6px;line-height:1.95;color:var(--text-2)}
+.deep ul{list-style:none;margin:0 0 16px;padding:0}
+.deep ul li{position:relative;padding-left:18px;margin-bottom:8px;font-size:14.2px;color:var(--text-2);line-height:1.8}
+.deep ul li::before{content:"";position:absolute;left:4px;top:.72em;width:6px;height:6px;border-radius:50%;background:var(--accent-soft)}
+.compare-table{width:100%;border-collapse:collapse;margin:12px 0 18px;font-size:13.6px;background:var(--bg);border-radius:8px;overflow:hidden}
+.compare-table th,.compare-table td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top;line-height:1.65}
+.compare-table th{background:var(--panel-alt);color:var(--brand);font-weight:700;white-space:nowrap}
+.compare-table td:first-child{font-weight:600;color:var(--text);white-space:nowrap}
+.compare-table tr:last-child td{border-bottom:none}
+.check-list{background:var(--panel-alt);border-radius:10px;padding:14px 18px;margin:10px 0 18px;border-left:3px solid var(--accent)}
+.check-list li::before{background:var(--brand-light)}
+
+/* 体验指南 步骤 */
+.steps{counter-reset:step;display:grid;gap:14px}
+.step{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:16px 18px 16px 62px;position:relative;box-shadow:var(--shadow);
+}
+.step::before{
+  counter-increment:step;content:counter(step,decimal-leading-zero);
+  position:absolute;left:16px;top:16px;font-family:ui-monospace,Menlo,monospace;
+  font-size:19px;font-weight:800;color:var(--accent);
+}
+.step h3{font-size:14.8px;font-weight:700;margin-bottom:5px}
+.step p{font-size:13.4px;color:var(--text-2);line-height:1.75;margin:0}
+
+/* FAQ */
+.faq{display:grid;gap:10px}
+details.faq-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  box-shadow:var(--shadow);overflow:hidden;
+}
+details.faq-item summary{
+  cursor:pointer;padding:14px 44px 14px 18px;font-size:14.4px;font-weight:700;color:var(--text);
+  position:relative;list-style:none;
+}
+details.faq-item summary::-webkit-details-marker{display:none}
+details.faq-item summary::after{
+  content:"";position:absolute;right:18px;top:50%;width:8px;height:8px;
+  border-right:2px solid var(--text-3);border-bottom:2px solid var(--text-3);
+  transform:translateY(-70%) rotate(45deg);transition:transform .2s;
+}
+details.faq-item[open] summary::after{transform:translateY(-30%) rotate(225deg)}
+details.faq-item[open] summary{color:var(--brand)}
+.faq-answer{padding:0 18px 16px;font-size:13.7px;color:var(--text-2);line-height:1.85}
+.faq-answer p:last-child{margin-bottom:0}
+
+/* 评论 */
+.comment-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:13px}
+.comment{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:13px 15px;box-shadow:var(--shadow);
+}
+.comment-head{display:flex;align-items:center;gap:8px;margin-bottom:7px}
+.avatar{
+  width:26px;height:26px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;
+  font-size:12px;font-weight:700;color:#fff;background:var(--brand-light);
+}
+.comment-head .nick{font-size:13px;font-weight:700;color:var(--text)}
+.comment-head .when{font-size:11px;color:var(--text-3);margin-left:auto}
+.comment p{font-size:13px;line-height:1.72;color:var(--text-2);margin:0}
+.comment p em{font-style:normal;color:var(--brand-light);font-weight:600}
+
+/* 资讯 */
+.news-list{display:grid;gap:12px}
+.news-item{
+  background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);
+  padding:15px 18px;box-shadow:var(--shadow);transition:.18s;
+}
+.news-item:hover{box-shadow:var(--shadow-hover)}
+.news-item h3{font-size:14.8px;font-weight:700;margin-bottom:5px}
+.news-item h3 a{color:var(--text)}
+.news-item h3 a:hover{color:var(--accent)}
+.news-item .news-date{font-size:11.5px;color:var(--text-3);font-family:ui-monospace,Menlo,monospace;margin-right:10px}
+.news-item p{font-size:13.2px;color:var(--text-2);line-height:1.72;margin:0}
+
+/* 相关推荐 */
+.rec-tags{display:flex;flex-wrap:wrap;gap:9px}
+.rec-tags a{
+  font-size:13px;background:var(--panel);border:1px solid var(--line);
+  padding:7px 14px;border-radius:20px;color:var(--brand-light);box-shadow:var(--shadow);
+  transition:.18s;
+}
+.rec-tags a:hover{background:var(--brand);color:#fff;border-color:var(--brand)}
+.rec-tags a b{font-weight:700;color:var(--accent);margin-left:5px}
+
+/* 榜单 */
+.rank-list{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);overflow:hidden}
+.rank-item{display:flex;align-items:center;gap:14px;padding:12px 18px;border-bottom:1px solid var(--line)}
+.rank-item:last-child{border-bottom:none}
+.rank-no{flex:none;width:26px;height:26px;border-radius:6px;background:var(--panel-alt);color:var(--text-2);
+  display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+.rank-item:nth-child(1) .rank-no{background:var(--accent);color:#241528}
+.rank-item:nth-child(2) .rank-no{background:var(--accent-soft);color:#241528}
+.rank-item:nth-child(3) .rank-no{background:var(--brand-light);color:#fff}
+.rank-main{flex:1;min-width:0}
+.rank-main .r-name{font-size:14px;font-weight:700;color:var(--text)}
+.rank-main .r-sub{font-size:12px;color:var(--text-3)}
+.rank-score{flex:none;font-size:13px;font-weight:800;color:var(--accent);font-family:ui-monospace,Menlo,monospace}
+
+/* 投稿互动 */
+.submit-panel{
+  background:linear-gradient(135deg,var(--brand) 0%,#432b52 100%);color:#f4ecf7;
+  border-radius:var(--radius-banner);padding:26px 28px;display:grid;
+  grid-template-columns:1.3fr .9fr;gap:26px;align-items:center;box-shadow:var(--shadow);
+}
+.submit-panel h2{color:#fff;font-size:20px;margin-bottom:10px}
+.submit-panel p{font-size:13.6px;line-height:1.85;color:#d8c9e0;margin-bottom:0}
+.submit-form{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px}
+.submit-form label{display:block;font-size:12px;color:#c9b6d4;margin-bottom:5px}
+.submit-form input{
+  width:100%;padding:8px 11px;border-radius:7px;border:1px solid rgba(255,255,255,.22);
+  background:rgba(255,255,255,.1);color:#fff;font-size:13px;margin-bottom:11px;
+}
+.submit-form input::placeholder{color:#b19fbe}
+.submit-form input:focus{outline:none;border-color:var(--accent-soft);background:rgba(255,255,255,.16)}
+.submit-form button{
+  width:100%;background:var(--accent);color:#241528;font-weight:700;border:none;
+  padding:9px;border-radius:7px;font-size:13.5px;cursor:pointer;transition:.18s;
+}
+.submit-form button:hover{background:var(--accent-soft)}
+.form-msg{font-size:12px;color:var(--accent-soft);margin-top:8px;min-height:16px}
+
+/* ---------- 右栏 ---------- */
+.aside-col{display:grid;gap:20px;position:sticky;top:calc(var(--sticky-h) + 18px)}
+.aside-box{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius-card);box-shadow:var(--shadow);padding:16px}
+.aside-box h2{font-size:14.5px;font-weight:800;margin-bottom:12px;color:var(--brand);display:flex;align-items:center;gap:7px}
+.aside-box h2::before{content:"";width:3px;height:14px;border-radius:2px;background:var(--accent)}
+.hot-list li{border-bottom:1px dashed var(--line);padding:9px 0;display:flex;gap:9px;align-items:baseline}
+.hot-list li:last-child{border-bottom:none;padding-bottom:0}
+.hot-list .n{font-family:ui-monospace,Menlo,monospace;font-size:12px;font-weight:800;color:var(--text-3);flex:none;width:16px}
+.hot-list li:nth-child(-n+3) .n{color:var(--accent)}
+.hot-list a{font-size:13.2px;color:var(--text);line-height:1.55}
+.hot-list a:hover{color:var(--accent)}
+.hot-list .m{display:block;font-size:11.5px;color:var(--text-3);margin-top:1px}
+.aside-tags{display:flex;flex-wrap:wrap;gap:7px}
+.aside-tags a{font-size:12px;background:var(--panel-alt);color:var(--brand-light);padding:4px 10px;border-radius:14px;border:1px solid var(--line)}
+.aside-tags a:hover{background:var(--brand);color:#fff}
+.update-mini li{padding:7px 0;border-bottom:1px dashed var(--line);font-size:12.6px;color:var(--text-2);line-height:1.6}
+.update-mini li:last-child{border-bottom:none;padding-bottom:0}
+.update-mini b{color:var(--text);font-weight:700;display:block}
+.update-mini span{color:var(--text-3);font-size:11.5px}
+
+/* ---------- 页尾 ---------- */
+.site-footer{background:var(--brand-deep);color:#c6b6d0;margin-top:20px;padding:46px 0 26px}
+.footer-inner{max-width:var(--maxw);margin:0 auto;padding:0 20px;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:32px}
+.footer-brand .logo-text{color:#fff;font-size:18px}
+.footer-brand p{font-size:13px;line-height:1.85;color:#b09cbd;margin-top:12px;max-width:340px}
+.footer-col h3{font-size:13.5px;color:#fff;margin-bottom:12px;letter-spacing:.5px}
+.footer-col li{margin-bottom:8px}
+.footer-col a{font-size:13px;color:#b7a4c4}
+.footer-col a:hover{color:var(--accent-soft)}
+.footer-bottom{
+  max-width:var(--maxw);margin:30px auto 0;padding:18px 20px 0;border-top:1px solid rgba(255,255,255,.12);
+  font-size:12px;color:#8f7c9d;display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;line-height:1.7;
+}
+.to-top{
+  position:fixed;right:22px;bottom:26px;width:44px;height:44px;border-radius:50%;
+  background:var(--brand);color:#fff;border:none;cursor:pointer;font-size:18px;
+  box-shadow:var(--shadow-hover);opacity:0;visibility:hidden;transition:.25s;z-index:70;
+}
+.to-top.show{opacity:1;visibility:visible}
+.to-top:hover{background:var(--accent);color:#241528}
+.no-result{display:none;padding:22px;text-align:center;color:var(--text-3);font-size:13.5px;background:var(--panel);border:1px dashed var(--line-strong);border-radius:var(--radius-card)}
+.no-result.show{display:block}
+
+/* ---------- 响应式 ---------- */
+@media (max-width:1180px){
+  .layout{grid-template-columns:190px minmax(0,1fr)}
+  .aside-col{grid-column:1/-1;position:static;grid-template-columns:repeat(auto-fit,minmax(250px,1fr))}
+}
+@media (max-width:1024px){
+  :root{--sticky-h:96px}
+  .header-inner{gap:14px}
+  .main-nav{display:none;position:absolute;left:0;right:0;top:100%;background:#fff;flex-direction:column;
+    padding:10px 16px 16px;border-bottom:1px solid var(--line);box-shadow:var(--shadow-hover);gap:2px}
+  .main-nav.open{display:flex}
+  .main-nav a{padding:10px 12px;font-size:14.5px}
+  .hamburger{display:flex}
+  .search-box input{width:130px}
+  .search-box input:focus{width:160px}
+  .hero-inner{grid-template-columns:1fr;gap:30px}
+  .hero-visual{height:270px;max-width:420px}
+  .layout{grid-template-columns:1fr;gap:24px;padding-top:26px}
+  .channel-col{position:static;max-height:none;overflow:visible}
+  .channel-list{display:flex;flex-wrap:wrap;gap:8px}
+  .channel-list li a{border-left:none;background:var(--panel);border:1px solid var(--line);padding:7px 12px;font-size:13px}
+  .channel-note{display:none}
+  .channel-title{margin-left:0}
+  .footer-inner{grid-template-columns:1fr 1fr;gap:24px}
+  .submit-panel{grid-template-columns:1fr}
+}
+@media (max-width:740px){
+  :root{--sticky-h:92px}
+  .notice-bar{padding:6px 12px;gap:8px;font-size:12px}
+  .notice-bar .nb-brand{padding-right:8px}
+  .header-inner{padding:8px 12px;gap:10px}
+  .logo-text{font-size:16.5px}
+  .search-box{display:none}
+  .header-tools .btn-ghost{padding:6px 10px;font-size:12px}
+  .hero-inner{padding:34px 12px 40px}
+  .hero h1{font-size:29px}
+  .hero-desc{font-size:14px}
+  .hero-visual{height:230px}
+  .hv-card{padding:10px 12px}
+  .hv-1{width:190px}
+  .hv-2{width:180px;top:92px}
+  .hv-3{width:200px;left:20px}
+  .hv-card .name{font-size:13px}
+  .container{padding:0 12px}
+  .block-head h2{font-size:18.5px}
+  .overview-panel,.deep{padding:18px 16px}
+  .card-grid{grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px}
+  .card-body{padding:11px 12px 13px}
+  .card-body h3{font-size:14px}
+  .card-desc{font-size:12.2px}
+  .comment-grid{grid-template-columns:1fr}
+  .cat-grid{grid-template-columns:repeat(auto-fill,minmax(132px,1fr))}
+  .update-item{padding:11px 13px;gap:9px}
+  .update-date{width:54px;font-size:11px}
+  .footer-inner{grid-template-columns:1fr;gap:22px}
+  .submit-panel{padding:20px 16px}
+  .to-top{right:14px;bottom:18px;width:40px;height:40px}
+  .compare-table{font-size:12.6px}
+  .compare-table th,.compare-table td{padding:8px 9px}
+  .compare-table td:first-child,.compare-table th{white-space:normal}
+}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  html{scroll-behavior:auto}
+}
+</style>
+<script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<div class="sticky-wrap">
+  <div class="notice-bar" role="region" aria-label="更新公告">
+    <span class="nb-brand">大乔未久步兵番号</span>
+    <div class="notice-track">
+      <span class="notice-item"><span class="dot"></span><b>11月7日</b> 更新 MIDE-982 单体作条目与时长标注</span>
+      <span class="notice-item"><span class="dot"></span><b>11月6日</b> 共演合集条目增至 <b>38 部</b>，补录共演名单</span>
+      <span class="notice-item"><span class="dot"></span><b>11月5日</b> 上线「出道作与早期作品」分类索引</span>
+      <span class="notice-item"><span class="dot"></span><b>11月3日</b> 观众评论新增 <b>46 条</b>，含 12 条对画质的吐槽</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <rect width="64" height="64" rx="14" fill="#2f1d3a"/>
+          <path d="M18 44V20h8l6 12 6-12h8v24h-7V31l-5 9h-4l-5-9v13z" fill="#f0c26d"/>
+          <circle cx="49" cy="17" r="4" fill="#c8892f"/>
+        </svg>
+        <span class="logo-text">大乔未久步兵番号</span>
+      </div>
+      <nav class="main-nav" id="mainNav" aria-label="主导航">
+        <a href="/#overview">作品概览</a>
+        <a href="/#featured">番号精选</a>
+        <a href="/#updates">新作动态</a>
+        <a href="/#categories">作品分类</a>
+        <a href="/#deepdive">番号解析</a>
+        <a href="/#guide">观看顺序</a>
+        <a href="/#ranking">热度榜</a>
+        <a href="/#news">行业动态</a>
+        <a href="/#faq">常见问答</a>
+        <a href="/#submit">投稿互动</a>
+      </nav>
+      <div class="header-tools">
+        <div class="search-box">
+          <label for="siteSearch" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">搜索番号或作品名</label>
+          <input type="search" id="siteSearch" placeholder="搜番号 / 作品名" autocomplete="off">
+        </div>
+        <button class="btn-ghost" type="button" onclick="document.getElementById('submit').scrollIntoView()">投稿</button>
+        <button class="hamburger" id="hamburger" aria-label="打开导航菜单" aria-expanded="false" aria-controls="mainNav">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+</div>
+
+<div class="hero">
+  <svg class="hero-rings" viewBox="0 0 520 520" aria-hidden="true" focusable="false">
+    <circle cx="260" cy="260" r="250" fill="none" stroke="rgba(240,194,109,.28)" stroke-width="1"/>
+    <circle cx="260" cy="260" r="190" fill="none" stroke="rgba(240,194,109,.20)" stroke-width="1"/>
+    <circle cx="260" cy="260" r="128" fill="none" stroke="rgba(240,194,109,.14)" stroke-width="1"/>
+    <circle cx="260" cy="260" r="64" fill="rgba(240,194,109,.06)" stroke="rgba(240,194,109,.22)" stroke-width="1"/>
+  </svg>
+  <div class="hero-inner">
+    <div>
+      <span class="hero-badge">番号索引 · 作品资料 · 类型对照</span>
+      <h1>大乔未久步兵番号</h1>
+      <p class="hero-desc">按番号、发行日期、共演阵容与片长整理的作品资料库，覆盖单体作品、共演合集、出道作与近两年新作；每条记录标注类型、发行方、时长与画质版本，方便检索和横向比较。</p>
+      <div class="hero-actions">
+        <a class="primary" href="/#featured">浏览精选番号</a>
+        <a class="secondary" href="/#deepdive">看番号差异解析</a>
+      </div>
+      <div class="hero-stats">
+        <div><strong>412</strong><span>收录作品条目</span></div>
+        <div><strong>38</strong><span>共演合集</span></div>
+        <div><strong>11-07</strong><span>最近条目更新</span></div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <div class="hv-card hv-1">
+        <div class="code">MIDE-982</div>
+        <div class="name">单人企划 · 2026年10月发行</div>
+        <div class="meta">片长 148 分钟 / 蓝光修复版</div>
+      </div>
+      <div class="hv-card hv-2">
+        <div class="code">SSIS-764</div>
+        <div class="name">共演合集 · 双人篇</div>
+        <div class="meta">共演 2 人 / 时长 176 分钟</div>
+      </div>
+      <div class="hv-card hv-3">
+        <div class="code">资料完整度</div>
+        <div class="name">番号 · 发行日 · 阵容 · 片长</div>
+        <div class="meta">四项齐备占比</div>
+        <div class="bar"><i></i></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="layout">
+
+    <!-- 左频道栏 -->
+    <aside class="channel-col" aria-label="频道索引">
+      <p class="channel-title">频道索引</p>
+      <ul class="channel-list" id="channelList">
+        <li><a href="/#overview" class="active">作品概览 <em>412</em></a></li>
+        <li><a href="/#featured">番号精选 <em>12</em></a></li>
+        <li><a href="/#updates">新作动态 <em>10</em></a></li>
+        <li><a href="/#categories">作品分类 <em>8</em></a></li>
+        <li><a href="/#deepdive">番号解析</a></li>
+        <li><a href="/#guide">观看顺序</a></li>
+        <li><a href="/#ranking">热度榜 <em>10</em></a></li>
+        <li><a href="/#comments">观众评论 <em>16</em></a></li>
+        <li><a href="/#news">行业动态 <em>6</em></a></li>
+        <li><a href="/#faq">常见问答 <em>6</em></a></li>
+        <li><a href="/#recommend">相关推荐 <em>8</em></a></li>
+        <li><a href="/#submit">投稿互动</a></li>
+      </ul>
+      <div class="channel-note">
+        <strong>番号格式提示</strong>
+        发行方前缀（如 MIDE、SSIS、JUFE）＋数字编号，是检索条目最直接的方式；同一前缀下的数字段通常对应不同年份的企划序列。
+      </div>
+    </aside>
+
+    <!-- 主内容 -->
+    <main>
+
+      <!-- 1 概览 -->
+      <section class="block" id="overview">
+        <div class="block-head">
+          <h2>作品领域概览</h2>
+          <span class="sub">收录范围与内容方向</span>
+        </div>
+        <div class="overview-panel">
+          <p>这一领域按发行形态大致分为四类：单体企划、共演合集、企划合辑与出道作。单体企划以一位核心演员贯穿全片，时长集中在 120—180 分钟，叙事线相对完整；共演合集由两位及以上演员共同出演，片长往往更长，卖点在于互动与对手戏；企划合辑则把不同时期、不同前缀的片段剪在一起，单条信息量分散，适合作为类型尝鲜；出道作通常带较重的宣传包装，画质与企划规格在同期作品中偏高。</p>
+          <p>从番号前缀能读出发行方与企划序列。MIDE 系列近年偏向长片单体，SSIS 系列共演比例较高，JUFE 一类前缀则常见于早期作品的重制或合集。同一演员在不同前缀下的作品，时长、镜头语言与画质版本差异明显，仅凭演员名检索容易漏掉跨发行方的条目。近两年蓝光修复版与 4K 重制的条目增多，同一部作品可能出现标清、高清、修复三个版本记录，检索时需要留意版本字段。</p>
+          <p>值得关注的方向有三条：一是 2026 年下半年新发的单体长片，片长普遍上探到 150 分钟以上；二是共演合集的阵容组合变化，双人篇与三人篇的比例在近三个月出现调整；三是早期作品的修复再版，部分 2019—2021 年的条目以新番号重新上架，容易与原始条目混淆。</p>
+          <div class="overview-tags">
+            <span>单体企划</span><span>共演合集</span><span>企划合辑</span><span>出道作</span>
+            <span>蓝光修复版</span><span>番号前缀</span><span>片长对照</span><span>发行方序列</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- 2 精选 -->
+      <section class="block" id="featured">
+        <div class="block-head">
+          <h2>番号精选条目</h2>
+          <span class="sub">按类型与发行时间挑选</span>
+        </div>
+        <div class="card-grid" id="featuredGrid">
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/mide982cover/400/300" width="400" height="300" loading="lazy" alt="MIDE-982 单体企划封面构图，深色背景与人物侧影"><span class="type-tag">单体企划</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">MIDE-982 长片单体企划</a></h3>
+              <p class="card-desc">2026 年 10 月发行，片长 148 分钟，全片单场景推进，中段有一段 12 分钟无剪辑长镜头，是近期单体企划里节奏最慢的一部。</p>
+              <div class="tag-row"><span>长片</span><span>单场景</span><span>蓝光修复</span></div>
+              <div class="card-meta"><span>热度 <b>9,240</b></span><span>评分 8.6</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/ssis764duo/400/300" width="400" height="300" loading="lazy" alt="SSIS-764 双人共演合集封面构图，双人并排站位的浅色布景"><span class="type-tag">共演合集</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">SSIS-764 双人共演篇</a></h3>
+              <p class="card-desc">双人共演，片长 176 分钟，前 40 分钟为各自独白段落，后半段才进入对手戏；共演名单与番号在发行方页面同步公布。</p>
+              <div class="tag-row"><span>双人篇</span><span>对手戏</span><span>176分钟</span></div>
+              <div class="card-meta"><span>热度 <b>8,710</b></span><span>评分 8.3</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/jufe221early/400/300" width="400" height="300" loading="lazy" alt="JUFE-221 早期作品修复版封面构图，复古色调与颗粒质感"><span class="type-tag">早期修复</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">JUFE-221 早期作品修复版</a></h3>
+              <p class="card-desc">原始版本发行于 2019 年，2026 年 9 月以修复版重新上架，画面比例从 4:3 调整为 16:9，片头增加了 30 秒的版本说明卡。</p>
+              <div class="tag-row"><span>修复再版</span><span>4:3转16:9</span><span>2019原始版</span></div>
+              <div class="card-meta"><span>热度 <b>6,880</b></span><span>评分 8.1</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/mide951solo/400/300" width="400" height="300" loading="lazy" alt="MIDE-951 单体企划封面构图，室内自然光场景"><span class="type-tag">单体企划</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">MIDE-951 室内实景单体作</a></h3>
+              <p class="card-desc">2026 年 7 月发行，片长 132 分钟，全程室内实景拍摄，几乎没有布景切换，靠光线变化划分段落，适合看镜头调度。</p>
+              <div class="tag-row"><span>实景</span><span>自然光</span><span>132分钟</span></div>
+              <div class="card-meta"><span>热度 <b>7,430</b></span><span>评分 8.4</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/ssis801trio/400/300" width="400" height="300" loading="lazy" alt="SSIS-801 三人共演合集封面构图，三人错落站位的暖色布景"><span class="type-tag">共演合集</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">SSIS-801 三人共演企划</a></h3>
+              <p class="card-desc">三人共演，片长 204 分钟，是今年共演合集里时长最长的一档；三段各自独立的开场后合并为一条主线，剪辑点较密。</p>
+              <div class="tag-row"><span>三人篇</span><span>204分钟</span><span>多线合并</span></div>
+              <div class="card-meta"><span>热度 <b>8,050</b></span><span>评分 8.0</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/mide988debut/400/300" width="400" height="300" loading="lazy" alt="MIDE-988 出道作封面构图，高对比度打光与正面构图"><span class="type-tag">出道作</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">MIDE-988 出道企划</a></h3>
+              <p class="card-desc">2026 年 10 月下旬发行，片长 156 分钟，含 18 分钟幕后花絮；宣传规格高于同期单体作，画质为原生 4K 转蓝光。</p>
+              <div class="tag-row"><span>出道作</span><span>幕后花絮</span><span>原生4K</span></div>
+              <div class="card-meta"><span>热度 <b>9,610</b></span><span>评分 8.7</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/jufe240edit/400/300" width="400" height="300" loading="lazy" alt="JUFE-240 企划合辑封面构图，分屏拼贴样式"><span class="type-tag">企划合辑</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">JUFE-240 跨年份合辑</a></h3>
+              <p class="card-desc">把 2021—2024 年的六段片段重新编排，片长 168 分钟，每段前有 5 秒章节卡；单段信息量少，适合当类型索引看。</p>
+              <div class="tag-row"><span>合辑</span><span>章节卡</span><span>跨年份</span></div>
+              <div class="card-meta"><span>热度 <b>5,120</b></span><span>评分 7.4</span></div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="thumb"><img src="https://picsum.photos/seed/mide970longtake/400/300" width="400" height="300" loading="lazy" alt="MIDE-970 长镜头企划封面构图，走廊纵深透视"><span class="type-tag">单体企划</span></div>
+            <div class="card-body">
+              <h3><a href="/#featured">MIDE-970 长镜头实验篇</a></h3>
+              <p class="card-desc">2026 年 8 月发行，片长 141 分钟，全片由七个长镜头组成，最短的一段 9 分钟；镜头间的转场只用环境音，没有配乐。</p>
+              <div class="tag-row"><span>长镜头</span><span>无配乐</span><span>七段式</span></div>
+              <div class="card-meta"><span>热度 <b>7,760</b></span><span>评分 8.5</span></div>
+            </div>
+          </article>
+
+        </div>
+        <p class="no-result" id="searchNoResult">没有匹配的条目，换个番号前缀或作品名关键词试试。</p>
+      </section>
+
+      <!-- 3 最新更新 -->
+      <section class="block" id="updates">
+        <div class="block-head">
+          <h2>新作与条目动态</h2>
+          <span class="sub">2026年10月下旬至11月7日</span>
+        </div>
+        <div class="update-list">
+          <div class="update-item"><span class="update-date">11-07</span><div class="update-main"><div class="u-name">MIDE-982 补录时长与版本字段<span class="code">单体</span></div><div class="u-sum">条目新增蓝光修复版时长 148 分钟记录，并注明与标清版相差 6 分钟的内容差异。</div></div></div>
+          <div class="update-item"><span class="update-date">11-06</span><div class="update-main"><div class="u-name">SSIS-801 三人共演名单公布<span class="code">共演</span></div><div class="u-sum">发行方页面列出三位出演者与各自出场段落时长，第三段 68 分钟为全片最长。</div></div></div>
+          <div class="update-item"><span class="update-date">11-05</span><div class="update-main"><div class="u-name">JUFE-221 修复版画面对比<span class="code">修复</span></div><div class="u-sum">4:3 转 16:9 后左右两侧各裁掉约 8% 画面，片头版本说明卡保留原始发行编号。</div></div></div>
+          <div class="update-item"><span class="update-date">11-04</span><div class="update-main"><div class="u-name">MIDE-988 出道作花絮上线<span class="code">出道</span></div><div class="u-sum">18 分钟幕后花絮单独成条，含试装与台词排练片段，与正片条目分开记录。</div></div></div>
+          <div class="update-item"><span class="update-date">11-03</span><div class="update-main"><div class="u-name">SSIS-764 双人篇片长修订<span class="code">共演</span></div><div class="u-sum">原标注 168 分钟，发行方更新为 176 分钟，多出的 8 分钟为片尾访谈段落。</div></div></div>
+          <div class="update-item"><span class="update-date">11-01</span><div class="update-main"><div class="u-name">JUFE-240 合辑章节卡说明<span class="code">合辑</span></div><div class="u-sum">六段片段的原始发行年份与番号在章节卡中逐条标注，最早一段为 2021 年 3 月。</div></div></div>
+          <div class="update-item"><span class="update-date">10-29</span><div class="update-main"><div class="u-name">MIDE-970 长镜头段落拆解<span class="code">单体</span></div><div class="u-sum">七个长镜头的时长分别为 18、9、14、22、11、16、21 分钟，无配乐段落共 51 分钟。</div></div></div>
+          <div class="update-item"><span class="update-date">10-27</span><div class="update-main"><div class="u-name">MIDE-951 实景拍摄地记录<span class="code">单体</span></div><div class="u-sum">条目补充拍摄地为两处室内实景，自然光段落集中在下午 14 时至 16 时之间。</div></div></div>
+          <div class="update-item"><span class="update-date">10-24</span><div class="update-main"><div class="u-name">早期作品分类索引上线<span class="code">分类</span></div><div class="u-sum">2019—2021 年发行的条目按发行年份归入「早期作品」，与修复版条目分列显示。</div></div></div>
+          <div class="update-item"><span class="update-date">10-21</span><div class="update-main"><div class="u-name">共演合辑条目增至 38 部<span class="code">共演</span></div><div class="u-sum">新增的 5 部里有 3 部为双人篇，2 部为三人篇，最早上映的一部发行于 2023 年 11 月。</div></div></div>
+        </div>
+      </section>
+
+      <!-- 4 分类入口 -->
+      <section class="block" id="categories">
+        <div class="block-head">
+          <h2>作品分类入口</h2>
+          <span class="sub">按发行形态与年份划分</span>
+        </div>
+        <div class="cat-grid">
+          <a class="cat-item" href="/#featured"><em>186</em><strong>单体企划</strong><span>一位核心演员贯穿全片，时长多在 120—180 分钟</span></a>
+          <a class="cat-item" href="/#featured"><em>38</em><strong>共演合集</strong><span>双人与三人篇为主，片长普遍超过 170 分钟</span></a>
+          <a class="cat-item" href="/#featured"><em>54</em><strong>企划合辑</strong><span>跨年份片段重编，每段前带章节卡</span></a>
+          <a class="cat-item" href="/#featured"><em>23</em><strong>出道作</strong><span>宣传规格偏高，多含幕后花絮段落</span></a>
+          <a class="cat-item" href="/#featured"><em>41</em><strong>修复再版</strong><span>2019—2021 年作品重制，画面比例有调整</span></a>
+          <a class="cat-item" href="/#featured"><em>27</em><strong>长镜头作品</strong><span>单镜头超过 8 分钟，剪辑点稀少的条目</span></a>
+          <a class="cat-item" href="/#featured"><em>32</em><strong>实景拍摄</strong><span>室内外实景为主，布景切换少的条目</span></a>
+          <a class="cat-item" href="/#featured"><em>11</em><strong>早期作品</strong><span>2019—2021 年原始版本，未修复条目</span></a>
+        </div>
+      </section>
+
+      <!-- 5 深度解析 -->
+      <section class="block" id="deepdive">
+        <div class="block-head">
+          <h2>番号结构与类型差异解析</h2>
+          <span class="sub">从前缀、时长到版本字段</span>
+        </div>
+        <div class="deep">
+          <p>番号不是单纯的编号，它同时承载发行方、企划序列与版本信息。读懂番号结构，比按演员名逐个翻页更能减少遗漏。下面拆成四块：前缀规则、时长与类型的关系、版本字段的判断、以及修复版与原始版的辨别方法。</p>
+
+          <h3>前缀与企划序列的对应关系</h3>
+          <p>MIDE 前缀下的作品以单体长片为主，2026 年发行的条目里，片长超过 150 分钟的有 9 部，占该年前缀作品的六成以上。SSIS 前缀则明显偏向共演，近三个月公布的 14 部新作中，共演占 9 部，其中双人篇 5 部、三人篇 4 部。JUFE 前缀的情况更复杂：2019—2021 年的原始条目多为中短篇，2024 年以后重新以该前缀上架的，则大多是修复版或合辑。</p>
+          <p>同一前缀的数字段也有规律。MIDE 9xx 段集中在 2026 年发行，950 之前的多为 2025 年及更早的作品；SSIS 7xx 段与 8xx 段的区别在于片长，7xx 段多在 150—180 分钟，8xx 段已有多部超过 200 分钟。这些规律不是官方说明，是从 412 条记录里归纳出来的，遇到例外条目时以发行方页面为准。</p>
+
+          <h3>时长与类型的关系：长不等于信息多</h3>
+          <p>片长是最容易被误读的字段。SSIS-801 的 204 分钟由三段独立开场加一条合并主线组成，实际主线内容只占 118 分钟，剩下的是各自独立的段落；MIDE-982 的 148 分钟则是一条完整叙事线，剪辑点少，单位时间的信息密度反而更高。</p>
+          <table class="compare-table">
+            <thead><tr><th>条目</th><th>片长</th><th>结构</th><th>实际主线时长</th></tr></thead>
+            <tbody>
+              <tr><td>MIDE-982</td><td>148 分钟</td><td>单线叙事</td><td>约 140 分钟</td></tr>
+              <tr><td>SSIS-801</td><td>204 分钟</td><td>三段开场＋合并主线</td><td>约 118 分钟</td></tr>
+              <tr><td>JUFE-240</td><td>168 分钟</td><td>六段片段重编</td><td>各段独立，无主线</td></tr>
+            </tbody>
+          </table>
+          <p>判断一个条目值不值得优先看，可以先看结构字段再看片长。单线叙事的条目，片长接近实际内容量；多段合并的条目，片长里有相当比例是各自独立的段落，若只关心主线，可以按章节卡跳读。</p>
+
+          <h3>版本字段：标清、高清与修复版的差别</h3>
+          <p>同一部作品出现多个版本记录时，容易点错条目。判断依据有三项可核对：画面比例、片头版本说明卡、以及时长差。JUFE-221 的修复版从 4:3 转为 16:9，左右各裁掉约 8% 画面，片头多出 30 秒说明卡，时长与原始版相差 4 分钟。这些字段在条目里逐项列出，缺任何一项都说明该条记录不完整。</p>
+          <ul class="check-list">
+            <li><strong>画面比例</strong>：原始版与修复版的宽高比不同，是最直接的辨别点。</li>
+            <li><strong>片头说明卡</strong>：修复版通常在片头标注原始发行编号与修复年份。</li>
+            <li><strong>时长差</strong>：修复版与原始版相差通常在 2—6 分钟，超过 10 分钟要核对是否混入了花絮。</li>
+          </ul>
+          <p>三项里缺两项以上，这条记录的可信度就要打折扣。有些条目只标了「修复版」三个字，没有画面比例也没有说明卡信息，这类记录在横向比较时应当排除，否则会把不同版本当成不同作品。</p>
+
+          <h3>共演阵容的判断：名单公布的先后顺序</h3>
+          <p>共演合集的阵容信息通常分两次公布：先出番号与发行日期，再出具体名单。SSIS-764 在 10 月中旬先公布了番号，11 月 3 日才补上共演名单与各自出场段落时长，这中间有近三周的空白期。空白期内流传的阵容说法，多数来自发行方预告片的截图比对，属于网友推测层面，不能当作已公开事实。</p>
+          <p>已公开事实与推测的分界，看发行方页面有没有列出出演者姓名与段落时长。列了，是事实层；只有预告片画面、没有文字名单，是推测层。这条界线在三人以上的共演条目里尤其重要，因为预告片里出现的画面不一定是最终剪辑版本。</p>
+        </div>
+      </section>
+
+      <!-- 6 体验指南 -->
+      <section class="block" id="guide">
+        <div class="block-head">
+          <h2>观看顺序与选择路径</h2>
+          <span class="sub">从类型尝鲜到定向检索</span>
+        </div>
+        <div class="steps">
+          <div class="step">
+            <h3>先按类型定范围，不要从番号列表第一页开始翻</h3>
+            <p>第一次接触这个领域，先从单体企划里挑一部片长 130—150 分钟的条目，结构简单、镜头语言完整，看完能建立对类型的基本判断。共演合集留到第二步，因为片长长、段落多，第一次看容易在中段失去线索。</p>
+          </div>
+          <div class="step">
+            <h3>用结构字段筛掉「时长虚高」的条目</h3>
+            <p>条目里标了「三段开场＋合并主线」「六段片段重编」这类结构的，片长要打七折看。MIDE 系列的单线叙事条目，片长与实际内容量基本一致；合辑类条目的片长里，章节卡和独立段落占了不少比例。</p>
+          </div>
+          <div class="step">
+            <h3>比较同演员的跨前缀作品</h3>
+            <p>同一位演员在 MIDE 和 SSIS 下的作品，镜头语言差别明显：前者偏长镜头与实景，后者偏多机位与剪辑节奏。想比较表演差异，挑同一年发行的两部，年份相近，拍摄条件差距小，对比才有意义。</p>
+          </div>
+          <div class="step">
+            <h3>修复版先看版本字段，再决定是否替换原始版</h3>
+            <p>画面比例、片头说明卡、时长差三项齐备的修复版，可以直接替换原始版记录；只标了「修复」但没有具体字段的，先保留原始版，等字段补全再判断。JUFE-221 是三项齐备的例子，可以直接看修复版。</p>
+          </div>
+          <div class="step">
+            <h3>共演条目等名单公布后再投入时间</h3>
+            <p>番号公布与名单公布之间通常有两到三周空白。名单未出时，阵容信息属于推测层，按推测层选片容易看错人。名单出齐、段落时长标注完整的条目，再安排观看，时间不会白花。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 7 FAQ -->
+      <section class="block" id="faq">
+        <div class="block-head">
+          <h2>常见问答</h2>
+          <span class="sub">检索与判断中的高频问题</span>
+        </div>
+        <div class="faq">
+          <details class="faq-item" open>
+            <summary>MIDE 前缀和 SSIS 前缀的作品主要差别在哪？</summary>
+            <div class="faq-answer"><p>MIDE 以单体长片为主，2026 年发行的条目里片长超过 150 分钟的占六成以上，结构多为单线叙事；SSIS 偏向共演，近三个月公布的 14 部新作中 9 部是共演，双人篇 5 部、三人篇 4 部。选片时先按这两个前缀分开看，能省掉大量无关条目。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>同一个番号出现两个时长记录，以哪个为准？</summary>
+            <div class="faq-answer"><p>先看两个记录分别对应哪个版本。标清版与蓝光修复版时长相差通常在 2—6 分钟，MIDE-982 就是差 6 分钟。若两条都标「修复版」却时长不同，查片头说明卡标注的修复年份，年份较晚的那条一般是最终版本。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>共演合集的阵容名单一般什么时候公布？</summary>
+            <div class="faq-answer"><p>番号与发行日期先出，具体名单通常晚两到三周。SSIS-764 是 10 月中旬公布番号、11 月 3 日补上名单与段落时长的例子。名单未公布前流传的阵容说法，多数来自预告片截图比对，属于推测层。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>早期作品的修复版值得替换原始版吗？</summary>
+            <div class="faq-answer"><p>看三项字段是否齐备：画面比例、片头说明卡、时长差。JUFE-221 的修复版三项都有，4:3 转 16:9、片头多 30 秒说明卡、时长差 4 分钟，这种情况可以直接替换。只有「修复」二字、字段缺失的条目，先保留原始版记录。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>长镜头作品和普通单体企划在观看体验上有什么区别？</summary>
+            <div class="faq-answer"><p>长镜头作品的剪辑点稀少，MIDE-970 全片只有七个镜头，最短一段 9 分钟，转场只用环境音。普通单体企划的剪辑点更密，段落之间靠配乐或画面切换划分。前者更接近实景记录，后者节奏更规整，按个人耐受度选。</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>企划合辑适合作为入门看吗？</summary>
+            <div class="faq-answer"><p>不太适合。JUFE-240 把 2021—2024 年的六段片段重新编排，每段前只有 5 秒章节卡，单段信息量少，缺少完整叙事线。合辑更适合已经熟悉类型、想按年份或片段做索引的人，入门还是从单体企划开始。</p></div>
+          </details>
+        </div>
+      </section>
+
+      <!-- 8 评论 -->
+      <section class="block" id="comments">
+        <div class="block-head">
+          <h2>观众评论</h2>
+          <span class="sub">16 条，含中性评价</span>
+        </div>
+        <div class="comment-grid">
+          <div class="comment"><div class="comment-head"><span class="avatar">阿</span><span class="nick">阿柴不加班</span><span class="when">11-07</span></div><p>MIDE-982 那个 12 分钟长镜头是真的没剪，我拉回去看了两遍，中间有一次光线明显变暗，应该是实拍没补光。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">南</span><span class="nick">南巷旧书</span><span class="when">11-07</span></div><p>SSIS-801 三个小时太长了，我分两次看完的。第三段 68 分钟确实最好，前两段可以快进。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">K</span><span class="nick">Kuma_0921</span><span class="when">11-06</span></div><p>JUFE-221 修复版左右裁掉那么多，构图都变了，我还是留原始版。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">橘</span><span class="nick">橘子汽水少冰</span><span class="when">11-06</span></div><p>MIDE-988 花絮比正片好看，试装那段笑死，正片反而有点端着。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">老</span><span class="nick">老陈看片</span><span class="when">11-05</span></div><p>共演名单拖三周才出，这操作见怪不怪了。预告片里那个人最后正片里只出现十几分钟。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">七</span><span class="nick">七号显示器</span><span class="when">11-05</span></div><p>MIDE-970 无配乐那段我一开始以为是音频坏了，后来才发现是故意的。挺敢的。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">木</span><span class="nick">木木不木</span><span class="when">11-04</span></div><p>片长标 204 分钟，实际主线就两小时不到，这种标注方式有点劝退。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">s</span><span class="nick">sora_1122</span><span class="when">11-04</span></div><p>今天翻条目才发现 MIDE-951 是下午两点到四点拍的，难怪光那么软。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">北</span><span class="nick">北纬三十度</span><span class="when">11-03</span></div><p>JUFE-240 就是拼盘，六段各看各的，没有主线。当索引可以，当作品看不行。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">白</span><span class="nick">白桃乌龙</span><span class="when">11-03</span></div><p>SSIS-764 片尾访谈八分钟被算进正片时长，这个操作不太厚道。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">小</span><span class="nick">小满未满</span><span class="when">11-02</span></div><p>2019 年的片子修复成 16:9，人脸比例都不对了，不如保留原始比例。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">y</span><span class="nick">yuki_1203</span><span class="when">11-02</span></div><p>最近在补 MIDE 9xx 段，2026 年这批确实比 2025 年的长，但节奏慢了不少，看个人口味。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">茶</span><span class="nick">茶渍斑斑</span><span class="when">11-01</span></div><p>共演三人篇越来越多，但互动质量参差，SSIS-801 算处理得好的。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">路</span><span class="nick">路过的猫</span><span class="when">10-31</span></div><p>翻番号比翻作品名靠谱，作品名翻译版本太多，搜出来一堆对不上的。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">一</span><span class="nick">一只咸鱼</span><span class="when">10-30</span></div><p>MIDE-982 热度九千多，确实值，镜头调度在这类片子里算讲究的。</p></div>
+          <div class="comment"><div class="comment-head"><span class="avatar">星</span><span class="nick">星野拾光</span><span class="when">10-28</span></div><p>修不修复无所谓，我就想知道哪条是最终剪辑版，字段标清楚就行。</p></div>
+        </div>
+      </section>
+
+      <!-- 9 资讯 -->
+      <section class="block" id="news">
+        <div class="block-head">
+          <h2>行业与条目动态</h2>
+          <span class="sub">6 条，10月下旬至11月7日</span>
+        </div>
+        <div class="news-list">
+          <article class="news-item">
+            <h3><a href="/#news"><span class="news-date">11-07</span>MIDE-982 蓝光修复版增补 6 分钟内容</a></h3>
+            <p>发行方在版本说明中列出，修复版比标清版多出 6 分钟，集中在片尾的收尾段落，原始标清版结尾为黑场直接结束。</p>
+          </article>
+          <article class="news-item">
+            <h3><a href="/#news"><span class="news-date">11-06</span>SSIS-801 公布三人出场段落时长</a></h3>
+            <p>三位出演者的段落分别为 52 分钟、44 分钟与 68 分钟，第三段最长，也是全片唯一在室外取景的部分。</p>
+          </article>
+          <article class="news-item">
+            <h3><a href="/#news"><span class="news-date">11-05</span>JUFE-221 修复版画面裁切比例披露</a></h3>
+            <p>4:3 转 16:9 后左右各裁约 8%，修复方称裁切是为适配现行播放设备，原始比例版本未同步上架。</p>
+          </article>
+          <article class="news-item">
+            <h3><a href="/#news"><span class="news-date">11-03</span>SSIS-764 片长由 168 分钟修订为 176 分钟</a></h3>
+            <p>多出的 8 分钟为片尾访谈，发行方在更新说明中承认首次公布时漏计，访谈段落含两位出演者的对谈。</p>
+          </article>
+          <article class="news-item">
+            <h3><a href="/#news"><span class="news-date">10-29</span>MIDE-970 七段长镜头时长公开</a></h3>
+            <p>七段分别为 18、9、14、22、11、16、21 分钟，其中 9 分钟一段为全片最短，也是唯一没有台词的一段。</p>
+          </article>
+          <article class="news-item">
+            <h3><a href="/#news"><span class="news-date">10-24</span>2019—2021 年作品分类索引上线</a></h3>
+            <p>按发行年份归档，共 11 条原始版本记录，与后续修复版条目分列，避免同作品多版本混在同一列表。</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- 10 相关推荐 -->
+      <section class="block" id="recommend">
+        <div class="block-head">
+          <h2>相关方向索引</h2>
+          <span class="sub">具体条目与类型词</span>
+        </div>
+        <div class="rec-tags">
+          <a href="/#featured">MIDE-982 长镜头段落 <b>拆解</b></a>
+          <a href="/#featured">SSIS-764 共演名单 <b>已出</b></a>
+          <a href="/#featured">JUFE-221 原始版对照 <b>2019</b></a>
+          <a href="/#featured">MIDE-970 无配乐段落 <b>51分钟</b></a>
+          <a href="/#featured">SSIS-801 三人出场顺序 <b>68分钟</b></a>
+          <a href="/#featured">MIDE-988 出道作花絮 <b>18分钟</b></a>
+          <a href="/#featured">JUFE-240 六段章节卡 <b>2021起</b></a>
+          <a href="/#featured">MIDE-951 实景自然光 <b>14-16时</b></a>
+        </div>
+      </section>
+
+      <!-- 11 榜单 -->
+      <section class="block" id="ranking">
+        <div class="block-head">
+          <h2>本周热度榜</h2>
+          <span class="sub">截至 2026-11-08</span>
+        </div>
+        <div class="rank-list">
+          <div class="rank-item"><span class="rank-no">1</span><div class="rank-main"><div class="r-name">MIDE-988 出道企划</div><div class="r-sub">单体 · 156 分钟 · 含 18 分钟花絮</div></div><span class="rank-score">9,610</span></div>
+          <div class="rank-item"><span class="rank-no">2</span><div class="rank-main"><div class="r-name">MIDE-982 长片单体企划</div><div class="r-sub">单体 · 148 分钟 · 蓝光修复版</div></div><span class="rank-score">9,240</span></div>
+          <div class="rank-item"><span class="rank-no">3</span><div class="rank-main"><div class="r-name">SSIS-764 双人共演篇</div><div class="r-sub">共演 · 176 分钟 · 含 8 分钟访谈</div></div><span class="rank-score">8,710</span></div>
+          <div class="rank-item"><span class="rank-no">4</span><div class="rank-main"><div class="r-name">SSIS-801 三人共演企划</div><div class="r-sub">共演 · 204 分钟 · 三段开场</div></div><span class="rank-score">8,050</span></div>
+          <div class="rank-item"><span class="rank-no">5</span><div class="rank-main"><div class="r-name">MIDE-970 长镜头实验篇</div><div class="r-sub">单体 · 141 分钟 · 七段长镜头</div></div><span class="rank-score">7,760</span></div>
+          <div class="rank-item"><span class="rank-no">6</span><div class="rank-main"><div class="r-name">MIDE-951 室内实景单体作</div><div class="r-sub">单体 · 132 分钟 · 自然光</div></div><span class="rank-score">7,430</span></div>
+          <div class="rank-item"><span class="rank-no">7</span><div class="rank-main"><div class="r-name">JUFE-221 早期作品修复版</div><div class="r-sub">修复 · 原始版 2019 年 · 4:3转16:9</div></div><span class="rank-score">6,880</span></div>
+          <div class="rank-item"><span class="rank-no">8</span><div class="rank-main"><div class="r-name">JUFE-240 跨年份合辑</div><div class="r-sub">合辑 · 168 分钟 · 六段章节卡</div></div><span class="rank-score">5,120</span></div>
+        </div>
+      </section>
+
+      <!-- 投稿互动 -->
+      <section class="block" id="submit">
+        <div class="submit-panel">
+          <div>
+            <h2>番号条目投稿与勘误</h2>
+            <p>发现条目时长、版本字段或共演名单有误，可以提交番号与具体字段；新增条目建议附发行方页面公布的番号与发行日期，方便核对。修复版条目请注明画面比例与片头说明卡信息。</p>
+          </div>
+          <form class="submit-form" id="submitForm" novalidate>
+            <label for="codeInput">番号</label>
+            <input id="codeInput" name="code" type="text" placeholder="例如 MIDE-982" required>
+            <label for="detailInput">投稿或勘误内容</label>
+            <input id="detailInput" name="detail" type="text" placeholder="具体字段与依据" required>
+            <button type="submit">提交条目</button>
+            <div class="form-msg" id="formMsg" role="status" aria-live="polite"></div>
+          </form>
+        </div>
+      </section>
+
+    </main>
+
+    <!-- 右辅助栏 -->
+    <aside class="aside-col" aria-label="辅助信息">
+      <div class="aside-box">
+        <h2>番号速查</h2>
+        <ul class="hot-list">
+          <li><span class="n">1</span><div><a href="/#featured">MIDE-982</a><span class="m">长片单体 · 148 分钟</span></div></li>
+          <li><span class="n">2</span><div><a href="/#featured">SSIS-764</a><span class="m">双人共演 · 176 分钟</span></div></li>
+          <li><span class="n">3</span><div><a href="/#featured">MIDE-988</a><span class="m">出道作 · 156 分钟</span></div></li>
+          <li><span class="n">4</span><div><a href="/#featured">SSIS-801</a><span class="m">三人共演 · 204 分钟</span></div></li>
+          <li><span class="n">5</span><div><a href="/#featured">MIDE-970</a><span class="m">长镜头 · 141 分钟</span></div></li>
+          <li><span class="n">6</span><div><a href="/#featured">JUFE-221</a><span class="m">修复版 · 原始 2019</span></div></li>
+        </ul>
+      </div>
+
+      <div class="aside-box">
+        <h2>类型标签</h2>
+        <div class="aside-tags">
+          <a href="/#categories">单体企划</a>
+          <a href="/#categories">共演合集</a>
+          <a href="/#categories">企划合辑</a>
+          <a href="/#categories">出道作</a>
+          <a href="/#categories">修复再版</a>
+          <a href="/#categories">长镜头</a>
+          <a href="/#categories">实景拍摄</a>
+          <a href="/#categories">早期作品</a>
+        </div>
+      </div>
+
+      <div class="aside-box">
+        <h2>近期条目更新</h2>
+        <ul class="update-mini">
+          <li><b>MIDE-982 版本字段补全</b><span>11-07 · 单体</span></li>
+          <li><b>SSIS-801 共演名单</b><span>11-06 · 共演</span></li>
+          <li><b>JUFE-221 裁切比例</b><span>11-05 · 修复</span></li>
+          <li><b>SSIS-764 片长修订</b><span>11-03 · 共演</span></li>
+          <li><b>MIDE-970 镜头时长</b><span>10-29 · 单体</span></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="logo" style="margin-bottom:4px">
+        <svg viewBox="0 0 64 64" aria-hidden="true" focusable="false" style="width:32px;height:32px">
+          <rect width="64" height="64" rx="14" fill="#f0c26d"/>
+          <path d="M18 44V20h8l6 12 6-12h8v24h-7V31l-5 9h-4l-5-9v13z" fill="#2f1d3a"/>
+        </svg>
+        <span class="logo-text">大乔未久步兵番号</span>
+      </div>
+      <p>覆盖 2019 年至 2026 年 11 月的作品条目，类型上以单体企划与共演合集为主，兼收企划合辑与修复再版；条目字段按番号、发行日期、片长、版本、阵容五项记录，近两个月的更新频率维持在每周 2—3 条。</p>
+    </div>
+    <div class="footer-col">
+      <h3>内容栏目</h3>
+      <ul>
+        <li><a href="/#overview">作品领域概览</a></li>
+        <li><a href="/#featured">番号精选条目</a></li>
+        <li><a href="/#updates">新作与条目动态</a></li>
+        <li><a href="/#categories">作品分类入口</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>解析与指南</h3>
+      <ul>
+        <li><a href="/#deepdive">番号结构解析</a></li>
+        <li><a href="/#guide">观看顺序与路径</a></li>
+        <li><a href="/#ranking">本周热度榜</a></li>
+        <li><a href="/#faq">常见问答</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h3>互动</h3>
+      <ul>
+        <li><a href="/#comments">观众评论</a></li>
+        <li><a href="/#news">行业与条目动态</a></li>
+        <li><a href="/#recommend">相关方向索引</a></li>
+        <li><a href="/#submit">条目投稿与勘误</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>条目内容为示例整理，番号、时长与版本字段以发行方公布信息为准。页面更新日期：2026-11-08。</span>
+    <span>© 2026 大乔未久步兵番号 · 内容索引</span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" type="button" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+  var hamburger = document.getElementById('hamburger');
+  var nav = document.getElementById('mainNav');
+  function closeNav(){
+    nav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    hamburger.setAttribute('aria-label','打开导航菜单');
+  }
+  hamburger.addEventListener('click', function(){
+    var open = nav.classList.toggle('open');
+    hamburger.setAttribute('aria-expanded', open ? 'true' : 'false');
+    hamburger.setAttribute('aria-label', open ? '关闭导航菜单' : '打开导航菜单');
+  });
+  nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', closeNav); });
+  document.addEventListener('keydown', function(e){
+    if(e.key === 'Escape'){ closeNav(); }
+  });
+  document.addEventListener('click', function(e){
+    if(nav.classList.contains('open') && !nav.contains(e.target) && !hamburger.contains(e.target)){
+      closeNav();
+    }
+  });
+
+  // 搜索筛选
+  var input = document.getElementById('siteSearch');
+  var grid = document.getElementById('featuredGrid');
+  var noResult = document.getElementById('searchNoResult');
+  var cards = grid ? Array.prototype.slice.call(grid.querySelectorAll('.card')) : [];
+  if(input && grid){
+    input.addEventListener('input', function(){
+      var q = input.value.trim().toLowerCase();
+      var shown = 0;
+      cards.forEach(function(card){
+        var text = card.textContent.toLowerCase();
+        var match = !q || text.indexOf(q) > -1;
+        card.style.display = match ? '' : 'none';
+        if(match) shown++;
+      });
+      noResult.classList.toggle('show', shown === 0);
+    });
+  }
+
+  // 回到顶部
+  var toTop = document.getElementById('toTop');
+  window.addEventListener('scroll', function(){
+    toTop.classList.toggle('show', window.scrollY > 480);
+  }, {passive:true});
+  toTop.addEventListener('click', function(){
+    window.scrollTo({top:0, behavior:'smooth'});
+  });
+
+  // 频道高亮
+  var links = Array.prototype.slice.call(document.querySelectorAll('#channelList a'));
+  var sections = links.map(function(a){
+    var id = a.getAttribute('href').replace('/#','');
+    return document.getElementById(id);
+  });
+  if('IntersectionObserver' in window){
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(entry){
+        if(entry.isIntersecting){
+          var idx = sections.indexOf(entry.target);
+          if(idx > -1){
+            links.forEach(function(l){ l.classList.remove('active'); });
+            links[idx].classList.add('active');
+          }
+        }
+      });
+    }, {rootMargin:'-140px 0px -60% 0px', threshold:0});
+    sections.forEach(function(s){ if(s) obs.observe(s); });
+  }
+
+  // 投稿表单
+  var form = document.getElementById('submitForm');
+  var msg = document.getElementById('formMsg');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var code = document.getElementById('codeInput').value.trim();
+      var detail = document.getElementById('detailInput').value.trim();
+      if(!code || !detail){
+        msg.style.color = '#ffb4a2';
+        msg.textContent = '番号与内容两项都要填写。';
+        return;
+      }
+      msg.style.color = '#f0c26d';
+      msg.textContent = '已记录 ' + code + '，核对发行方信息后更新条目。';
+      form.reset();
+    });
+  }
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"WebSite",
+  "name":"大乔未久步兵番号",
+  "url":"https://example.com/",
+  "description":"按番号、发行日期与作品类型整理的作品资料库，收录单体作品、共演合集、出道作与近期新作条目。",
+  "inLanguage":"zh-CN"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@type":"FAQPage",
+  "mainEntity":[
+    {"@type":"Question","name":"MIDE 前缀和 SSIS 前缀的作品主要差别在哪？","acceptedAnswer":{"@type":"Answer","text":"MIDE 以单体长片为主，2026 年发行的条目里片长超过 150 分钟的占六成以上，结构多为单线叙事；SSIS 偏向共演，近三个月公布的 14 部新作中 9 部是共演。"}},
+    {"@type":"Question","name":"同一个番号出现两个时长记录，以哪个为准？","acceptedAnswer":{"@type":"Answer","text":"先看两个记录分别对应哪个版本。标清版与蓝光修复版时长相差通常在 2—6 分钟，MIDE-982 就是差 6 分钟。"}},
+    {"@type":"Question","name":"共演合集的阵容名单一般什么时候公布？","acceptedAnswer":{"@type":"Answer","text":"番号与发行日期先出，具体名单通常晚两到三周。SSIS-764 是 10 月中旬公布番号、11 月 3 日补上名单与段落时长的例子。"}},
+    {"@type":"Question","name":"早期作品的修复版值得替换原始版吗？","acceptedAnswer":{"@type":"Answer","text":"看三项字段是否齐备：画面比例、片头说明卡、时长差。JUFE-221 的修复版三项都有，4:3 转 16:9、片头多 30 秒说明卡、时长差 4 分钟。"}},
+    {"@type":"Question","name":"长镜头作品和普通单体企划在观看体验上有什么区别？","acceptedAnswer":{"@type":"Answer","text":"长镜头作品的剪辑点稀少，MIDE-970 全片只有七个镜头，最短一段 9 分钟，转场只用环境音；普通单体企划的剪辑点更密。"}},
+    {"@type":"Question","name":"企划合辑适合作为入门看吗？","acceptedAnswer":{"@type":"Answer","text":"不太适合。JUFE-240 把 2021—2024 年的六段片段重新编排，每段前只有 5 秒章节卡，单段信息量少，缺少完整叙事线。"}}
+  ]
+}
+</script>
+
+</body>
+                                                                                                                                                                                                    </html>
